@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'Resource_monitoring.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Resource_monitoring',
+        'NAME': 'resource_monitoring_web',
         'USER':'root',
         'PASSWORD':'',
     }

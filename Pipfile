@@ -5,10 +5,6 @@ name = "pypi"
 
 [packages]
 django = "*"
-pyserial = "*"
-mysql-connector-python = "*"
-fpdf = "*"
-pypdf2 = "*"
 
 [dev-packages]
 
