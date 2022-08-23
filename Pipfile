@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 django = "*"
+pyserial = "*"
+mysql-connector-python = "*"
 
 [dev-packages]
 
