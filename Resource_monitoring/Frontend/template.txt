@@ -1,5 +1,3 @@
-{% extends 'template.html' %} 
-
 {% load static %}
 
 {% block style-links %}
@@ -9,8 +7,6 @@
 {% endblock head-tag-scripts %}
 
 {% block content %}
-
-    Nav
 
 {% endblock content %}
 
