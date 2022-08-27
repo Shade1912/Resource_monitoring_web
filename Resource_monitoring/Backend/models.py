@@ -1,6 +1,6 @@
 from pyexpat import model
 from django.db import models
-import uuid
+from datetime import time
 
 # Create your models here.
 class alerts(models.Model):
@@ -27,7 +27,7 @@ class session_data(models.Model):
     temp_lowest_level = models.FloatField()
     humidity_highest_level = models.FloatField()
     humidity_lowest_level = models.FloatField()
-    time_interval = models.TimeField(default= "00:00:00")
+    time_interval = models.TimeField(default= time(0,15,0))
 
     class Meta:
         db_table = "Session_data"
