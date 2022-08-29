@@ -1,7 +1,7 @@
 from datetime import datetime, time
 import random
 from django.shortcuts import render, redirect
-from Backend.models import session_data
+from baseapp.models import session_data
 
 # Create your views here.
 def home(request):
