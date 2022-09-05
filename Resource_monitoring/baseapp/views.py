@@ -1,4 +1,6 @@
+from collections import UserString
 from datetime import datetime, time
+from plistlib import UID
 import random
 from django.shortcuts import render, redirect
 from baseapp.models import session_data
@@ -48,5 +50,66 @@ def addSession(request):
 
 def addGroups(request):
     pass
+
+# Model Structure
+
+# Device Model
+# Device UID
+# device id
+# channel/probe 1
+# channel/probe 2
+# channel/probe 3
+# channel/probe 4
+# channel/probe 5
+# channel/probe 6
+# channel/probe 7
+# channel/probe 8
+# Device Location
+
+# all Function structuresv
+
+# def checkPrivilege(GroupName, FunctionName):
+#     return FunctionName privilege of GroupName
+
+# def addLog(User, Log):
+#     Add Log and User to table with time
+
+# def addGroup(GroupName, Array containing all privilege values in order):
+#     Add entry containing GroupName and Array
+
+# def deleteGroup(GroupName):
+#     Delete entry with GroupName
+
+# def addUser(UserName,Password,GroupName):
+#     Add entry containing UserName, Password, GroupName
+
+# def deleteUser(UserName):
+#     delete entry with UserName
+
+# def fetchSessions():
+#     fetch all ongoing sessions
+
+# def listUsers():
+#     list all Users
+
+# def listGroup():
+#     list all Groups
+
+# def addAlert():
+#     Add alert
+
+# def deleteAlert():
+#     delete alert
+
+# def fetchGodownInfo():
+#     fetch godown info noted in the app
+
+
+
+
+
+
+
+
 
 # login,  ajax for continuous data of micro cont* 
