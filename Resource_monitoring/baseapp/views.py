@@ -10,7 +10,7 @@ from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-
+# view - Home, Login, Logout, User Management, addSession, monitoring, alerts, reports, channel info,  
 
 def check_access(token, func_name):
     pass
