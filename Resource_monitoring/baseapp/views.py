@@ -3,7 +3,9 @@ from datetime import datetime, time
 from plistlib import UID
 import random
 from django.shortcuts import render, redirect
+from baseapp.models import group_privileges
 from baseapp.models import session_data
+from django.db.models import Q
 
 # Create your views here.
 def home(request):
@@ -68,8 +70,12 @@ def addGroups(request):
 
 # all Function structuresv
 
-# def checkPrivilege(GroupName, FunctionName):
-#     return FunctionName privilege of GroupName
+def checkPrivilege(GroupName, FunctionName):
+    try:
+        Access_Permission = group_privileges.objects.get(Q())
+        return Access_Permission
+    except Exception as err:
+        print(err)
 
 # def addLog(User, Log):
 #     Add Log and User to table with time

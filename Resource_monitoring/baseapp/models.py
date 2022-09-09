@@ -33,7 +33,7 @@ class session_data(models.Model):
         db_table = "Session_data"
 
 class group_privileges(models.Model):
-    user_access_control = models.AutoField(primary_key=True)
+    group_name = models.AutoField(primary_key=True)
     print_report = models.BooleanField()
     view_time_table = models.BooleanField()
     view_channel_info = models.BooleanField()
