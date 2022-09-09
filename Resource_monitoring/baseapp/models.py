@@ -2,7 +2,7 @@ from pyexpat import model
 from tokenize import group
 from django.db import models
 from datetime import time
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -36,7 +36,8 @@ class session_data(models.Model):
         db_table = "Session_data"
 
 class group_privileges(models.Model):
-    group_name = models.AutoField(primary_key=True)
+    user_access_control = models.AutoField(primary_key=True)
+    group_name = models.CharField(max_length=50,unique=True)
     print_report = models.BooleanField()
     view_time_table = models.BooleanField()
     view_channel_info = models.BooleanField()
@@ -62,7 +63,7 @@ class user_extra_details(models.Model):
 
 class userlogs(models.Model):
     id = models.AutoField(primary_key=True)
-    username = models.ForeignKey(user_extra_details, on_delete=models.CASCADE, default=None, verbose_name='userdetails')
+    username = models.ForeignKey(User, on_delete=models.CASCADE, default=None, verbose_name='userdetails')
     logs = models.CharField(max_length= 50)
     timestamp = models.DateTimeField(auto_now_add=True)
 
@@ -98,7 +99,6 @@ class device(models.Model):
 
     class Meta:
         db_table = "device"
-
 
 
 # class N_table(models.Model), {
