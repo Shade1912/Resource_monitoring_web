@@ -5,11 +5,8 @@ import random
 from django.shortcuts import render, redirect
 from baseapp.models import group_privileges
 from baseapp.models import session_data
-<<<<<<< Updated upstream
 from django.db.models import Q
-=======
 from django.contrib.auth.decorators import login_required
->>>>>>> Stashed changes
 
 # Create your views here.
 
