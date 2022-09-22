@@ -1,9 +1,12 @@
 from collections import UserString
 from datetime import datetime, time
+from imaplib import Commands
 from os import access
 from plistlib import UID
 import random
+from re import template
 from django.shortcuts import render, redirect
+from Resource_monitoring.baseapp.models import probe
 from baseapp.models import group_privileges,userlogs,deleteGroup, alerts
 from baseapp.models import session_data
 from django.db.models import Q
@@ -79,7 +82,7 @@ def addGroups(request):
 # channel/probe 8
 # Device Location   
 
-# all Function structuresv
+# all Function structures
                         # Function use case
                         # checkPrivilege("Admin","print_report")
                         # addLog(request.user,"Test")
@@ -265,11 +268,25 @@ def removeSession(sessionID):
 #     fetch godown info noted in the app
 # o/p-> try=> ret logs; except => print err and ret 0
 
+#------------------------------------ new-structures ------------------------------------#
 
+# def syncData():
+#     Run all sync Commands
 
+# def syncUserLogs():
+#     sync user log table
 
+# def syncDrugTemplate():
+#     sync drug template table
 
+# def syncProbe():
+#     sync probe table
 
+# def syncDevice():
+#     sync device table
+
+# def syncSessionData():
+#     sync session data table
 
 
 
