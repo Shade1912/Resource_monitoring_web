@@ -6,9 +6,8 @@ from plistlib import UID
 import random
 from re import template
 from django.shortcuts import render, redirect
-from Resource_monitoring.baseapp.models import probe
-from baseapp.models import group_privileges,userlogs,deleteGroup, alerts
-from baseapp.models import session_data
+from baseapp.models import probe
+from baseapp.models import group_privileges,userlogs, alerts,session_data, user_extra_details
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -22,46 +21,81 @@ def check_access(token, func_name):
 def home(request):
     pass
 
+def addreses(request):
+    return render(request,"./addresess.html")
+
+def alert(request):
+    return render(request,"./alerts.html")
+
+def monitoring(request):
+    return render(request,"./Monitoring.html")
+
+def reports(request):
+    return render(request,"./Reports.html")
+    
+def timetable(request):
+    return render(request, "./Timetable.html")
+
+def channelinfo(request):
+    return render(request, "./Channelinfo.html")
+
+def uac(request):
+    return render(request, "./UserAccessControl.html")
+
+def addUser(request,name,email,password,grp_name):
+    try:
+        user = User.objects.create_user(name,email,password)
+        grp_priv = group_privileges.objects.get(Q(group_name = grp_name))
+        add_user_extra_details = addUserExtraDetails(user , grp_priv)
+        print("user created")
+    except Exception as err:
+        print("Error creating user:", err)
+    return redirect(uac)
+
+def addUserExtraDetails(userId , groupName):
+    try:
+        print("Extra details of user")
+        user_extra_details_query = user_extra_details.objects.create(
+            user_id = userId,
+            group_name = groupName,
+            session_tokens = "",
+        )
+        user_extra_details_query.save()
+    except Exception as err:
+        print("Error:", err)
+
+
 @login_required
 def dashboard(request):
     # Sessionkey => (request.session._session_key)
-    
     return render(request,"./Dashboard.html")
 
 def addSession(request):
     random_number = random.randint(0,500)
-    timestamp = datetime.now()
-    session_ID = random_number
-    numbers = 122
-    serial = "12asa121a2"
-    date = (timestamp.strftime("%Y-%m-%d"))
-    session_start_time = (timestamp.strftime("%Y-%m-%d"))
-    session_end_time = (timestamp.strftime("%Y-%m-%d"))
-    session_status = 1
-    temp_highest_level = 45
-    temp_lowest_level = 36
-    humidity_highest_level = 22
-    humidity_lowest_level = 20
-    
+    timestamp = datetime.now()  
+    print("adding session") 
     try:
-        session_data_object = session_data.objects.create(
-            session_ID = random_number,
-            numbers = 122,
-            serial = "12asa121a2",
-            date = (timestamp.strftime("%Y-%m-%d")),
-            session_start_time = (timestamp.strftime("%Y-%m-%d")),
-            session_end_time = (timestamp.strftime("%Y-%m-%d")),
-            session_status = 1,
-            temp_highest_level = 45,
-            temp_lowest_level = 36,
-            humidity_highest_level = 22,
-            humidity_lowest_level = 20
-        )
-
-        session_data_object.save()
+        if request.method == "POST": 
+            print("creating session")
+            session_data_object = session_data.objects.create(
+                session_ID = random_number,
+                numbers = 122,
+                serial = "12asa121a2",
+                date = (timestamp.strftime("%Y-%m-%d")),
+                session_start_time = (timestamp.strftime("%Y-%m-%d")),
+                session_end_time = (timestamp.strftime("%Y-%m-%d")),
+                session_status = 1,
+                temp_highest_level = 45,
+                temp_lowest_level = 36,
+                humidity_highest_level = 22,
+                humidity_lowest_level = 20
+            )
+            print("session created")
+            session_data_object.save()
+            print("session added")
     except Exception as err:
         print(err)
-    return render(request,"Dashboard.html")
+    return redirect(monitoring)
 
 
 def addGroups(request):
@@ -255,13 +289,18 @@ def removeAlert(sessionID):
 # def deleteSession():
 #     delete session
 # o/p-> try=> ret 1; except => print err and ret 0
-def removeSession(sessionID):
+def removeSession(request,sessionID):
     try:
-        session_data.objects.filter(session_ID = sessionID).delete()
-        return 1
+        if request.method == "POST":
+            print("sessionn data deleting")
+            remove_session_query = session_data.objects.filter(session_ID = sessionID).delete()
+            print(remove_session_query)
+            # remove_session_query.save()
+            return redirect(monitoring)
     except Exception as err:
         print(err)
-        return 0
+        return redirect(monitoring)
+    
 
 
 # def fetchLogs():

@@ -11,21 +11,22 @@
 <body>
     <div class="container">
         <div class="col">
-          <a href="addsess.html" class="active">
-          <button>Add Session</button></a>
-          <div class="col">
-            <a href="#" class="active">  
-            <button>Start Session</button></a>
-            <div class="col">
-                <a href="#" class="active">  
-                <button>Stop Session</button></a>
-                <div class="col">
-                    <a href="Delsess.html" class="active">  
-                    <button>Delete Session</button></a>
+            <div>
+                <div>
+                    <form action="{% url 'addSession' %}" method="post">
+                        {% csrf_token %}
+                    <button>Add Session</button></a>
+                    </form>
+                </div>
+                <div>
+                    <form action="{% url 'removeSession' sessionID=19 %}" method="post">
+                        {% csrf_token %}
+                    <button>delete Session</button></a>
+                    </form>
                 </div>
             </div>
-          </div>
         </div>
+
     </div>                          
 </body>
 </html>

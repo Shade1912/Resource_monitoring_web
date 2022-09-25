@@ -54,6 +54,7 @@ class group_privileges(models.Model):
 
 class user_extra_details(models.Model):
     id = models.AutoField(primary_key=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, default=None, verbose_name='userdetails')
     # username = models.CharField(max_length=50, unique=True)
     # password = models.CharField(max_length=50)
     group_name = models.ForeignKey(group_privileges, on_delete=models.CASCADE, default=None, verbose_name='group_privileges')
