@@ -11,6 +11,7 @@ urlpatterns = [
     path('timetable', views.timetable, name="timetable"), 
     path('channelinfo', views.channelinfo, name="channelinfo"), 
     path('addSession', views.addSession, name="addSession"), 
+    path('fetchSession', views.fetchSessions, name="fetchSession"), 
     path('uac', views.uac, name="uac"), 
     path('addUser/<str:name>/<str:email>/<str:password>/<str:grp_name>', views.addUser, name="addUser"), 
     path('removeSession/<slug:sessionID>', views.removeSession, name="removeSession"), 

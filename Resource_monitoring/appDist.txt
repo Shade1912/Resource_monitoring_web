@@ -9,7 +9,7 @@ Godown:
 
         Base App -> 
             - User access control (UAC) - limiting user access *
-            - User logs - maintaining records of every actions*
+            - User logs - maintaining records of every actions *
             - Data monitoring
                 -Detailing/Data visualization 
             - Alerts

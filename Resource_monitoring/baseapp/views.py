@@ -228,8 +228,10 @@ def removeUser(user_name):
 # o/p-> try=> ret session; except => print err and ret 0
 def fetchSessions(request):
     try:
+ 
         sessionData = session_data.objects.all()
-        return render(request,"showSession.html",{'Session Data':sessionData})
+        print(sessionData)
+        return render(request,"./showSession.html",{'SessionData':sessionData})
     except Exception as err:
         print(err)
         return 0

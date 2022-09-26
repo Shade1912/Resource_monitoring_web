@@ -7,11 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <form method="post" action="{% url 'addUser' name='user1's email='user@gmail.com' password='12345678' grp_name='User' %}">
-            {% csrf_token %}
-            <button>Add User</button>
-        </form>
-    </div>
+    {% for data in SessionData %}
+       -- {{ data.numbers }}
+    {% endfor %}
 </body>
 </html>
