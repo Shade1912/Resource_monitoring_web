@@ -131,3 +131,8 @@ dmypy.json
 
 #baseapp
 migrations
+
+
+#collectionapp
+modules/db_queries
+

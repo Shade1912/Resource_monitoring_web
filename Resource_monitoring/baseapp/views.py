@@ -11,9 +11,13 @@ from baseapp.models import group_privileges,userlogs, alerts,session_data, user_
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from background_task import background
 
 # Create your views here.
 # view - Home, Login, Logout, User Management, addSession, monitoring, alerts, reports, channel info,  
+@background(schedule=60)
+def scheduleTest():
+    print("Testing back jobs")
 
 def check_access(token, func_name):
     pass
