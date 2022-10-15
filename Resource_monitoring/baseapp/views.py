@@ -1,10 +1,6 @@
-from collections import UserString
 from datetime import datetime, time
 from imaplib import Commands
-from os import access
-from plistlib import UID
 import random
-from re import template
 from django.shortcuts import render, redirect
 from baseapp.models import probe
 from baseapp.models import group_privileges,userlogs, alerts,session_data, user_extra_details
@@ -14,7 +10,8 @@ from django.contrib.auth.models import User
 from background_task import background
 
 # Create your views here.
-# view - Home, Login, Logout, User Management, addSession, monitoring, alerts, reports, channel info,  
+# view - Home, Login, Logout, User Management, addSession, monitoring, alerts, reports, channel info
+
 @background(schedule=60)
 def scheduleTest():
     print("Testing back jobs")
@@ -29,7 +26,11 @@ def addreses(request):
     return render(request,"./addresess.html")
 
 def alert(request):
-    return render(request,"./alerts.html")
+    alerts_query = alerts.objects.all()
+    context = {
+        "alerts":alerts_query
+    }
+    return render(request,"./alerts.html",context)
 
 def monitoring(request):
     return render(request,"./Monitoring.html")

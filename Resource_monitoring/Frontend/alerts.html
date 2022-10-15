@@ -1,1 +1,61 @@
-<h1>Alerts</h1>
+{% load static %}
+
+{% block style-links %}
+{% endblock style-links %}
+
+{% block head-tag-scripts %}
+{% endblock head-tag-scripts %}
+
+{% block content %}
+
+<H1>Alerts</H1>
+<table border="1">
+    <tr>
+        <td>
+            Temperature
+        </td>
+        <td>
+            Humidity
+        </td>
+        <td>
+            Temperature in range
+        </td>
+        <td>
+            Humidity in range
+        </td>
+        <td>
+            Session ID
+        </td>
+    </tr>
+
+    {% for alert in alerts %}
+    <tr>
+        <td>
+            {{alert.temperature}}
+        </td>
+        <td>
+            {{alert.humidity}}
+
+        </td>
+        <td>
+            {{alert.temperature_in_range}}
+            
+        </td>
+        <td>
+            {{alert.humidity_in_range}}
+            
+        </td>
+        <td>
+            {{alert.session_id.pk}}
+            
+        </td>
+    </tr>    
+    {% endfor %}
+    
+
+
+</table>
+{% endblock content %}
+
+{% block scripts %}
+{% endblock scripts %}
