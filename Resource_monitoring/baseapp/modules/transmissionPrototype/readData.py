@@ -8,7 +8,6 @@ def readData(ser):
         list1 = str(list1) +str(data)
     if list1 == "Z]":
         for i in range(2):
-
             data = str(ser.read())
             data = data.replace("b","")
             data = data.replace("'","")
