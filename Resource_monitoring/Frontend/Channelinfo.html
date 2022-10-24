@@ -11,33 +11,6 @@
         <div class="col">
           <a href="" class="active">
           <button>Change Device</button></a></div>
-          <table  border="1" align="center">
-            <tr>
-                <th>
-                    Device ID
-                </th>
-                <th>
-                    ProbeID
-                </th>
-                <th>
-                    Probe Offset
-                </th>
-                <th>
-                    Status
-                </th>
-            </tr>
-
-            {% for probes in probeData  %}
-            
-            <tr>
-                <td>{{probes.device_id.pk}}</td>
-                <td>{{probes.probe_id}}</td>
-                <td>{{probes.probe_offset}}</td>
-                <td>{{probes.status}}</td>
-            </tr>
-            {% endfor %}
-        
-        </table>
     </div>
 </body>
 </html>

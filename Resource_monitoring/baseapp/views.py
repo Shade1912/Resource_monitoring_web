@@ -7,12 +7,12 @@ from baseapp.models import group_privileges,userlogs, alerts,session_data, user_
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-# from background_task import background
+from background_task import background
 
 # Create your views here.
 # view - Home, Login, Logout, User Management, addSession, monitoring, alerts, reports, channel info
 
-# @background(schedule=60)
+@background(schedule=60)
 def scheduleTest():
     print("Testing back jobs")
 
@@ -42,11 +42,7 @@ def timetable(request):
     return render(request, "./Timetable.html")
 
 def channelinfo(request):
-    prodeData = probe.objects.all()
-    context = {
-        "probeData":prodeData
-    }
-    return render(request, "./Channelinfo.html",context)
+    return render(request, "./Channelinfo.html")
 
 def uac(request):
     return render(request, "./UserAccessControl.html")
@@ -61,44 +57,6 @@ def addUser(request,name,email,password,grp_name):
         print("Error creating user:", err)
     return redirect(uac)
 
-def manageUser(request):
-    return render(request, "./Manageusers.html")
-    
-def delUser(request):
-    all_user = user_extra_details.objects.all()
-    context = {
-        "all_users": all_user
-    }
-    return render(request, "./delUser.html",context)
-
-def viewUser(request,userId):
-    user_details = user_extra_details.objects.get(pk = userId)
-    groups = group_privileges.objects.all()
-    user_main_details = User.objects.get(pk = user_details.user_id.pk)
-    context = {
-        "user_details": user_details,
-        "groups": groups
-    }
-    if request.method == "POST":
-        print(request.POST['group'])
-        user_main_details.username = request.POST['username']
-        user_main_details.first_name = request.POST['firstname']
-        user_main_details.last_name = request.POST['lastname']
-        user_details.is_deleted = request.POST['deleteUser']
-        user_details.group_name = group_privileges.objects.get(pk = request.POST['group'])
-        user_details.save()
-        user_main_details.save()
-        return redirect("/editUser")
-
-    return render(request, "./view_user.html",context)
-
-def editUser(request):
-    all_user = user_extra_details.objects.filter(is_deleted = 0)
-    context = {
-        "all_users": all_user
-    }
-    return render(request, "./editUser.html",context)
-
 def addUserExtraDetails(userId , groupName):
     try:
         print("Extra details of user")
@@ -110,38 +68,6 @@ def addUserExtraDetails(userId , groupName):
         user_extra_details_query.save()
     except Exception as err:
         print("Error:", err)
-
-def manageGroup(request):
-
-    return render(request, "./Managegroups.html")
-   
-def addGroupPage(request):
-    if request.method == "POST":
-        permArray = list(request.POST["permArray"])
-        group_name = request.POST['groupName']
-        add_group = group_privileges.objects.create(
-            group_name = group_name,
-            print_report = permArray[0],
-            view_time_table = permArray[1],
-            view_channel_info = permArray[2],
-            create_user = permArray[3],
-            delete_user = permArray[4],
-            create_grp = permArray[5],
-            delete_grp = permArray[6],
-            grp_list = permArray[7],
-            add_session = permArray[8],
-            delete_session = permArray[9],
-        )
-        add_group.save()
-        # print(permArray)
-    return render(request, "./addGroup.html")
-
-
-def editGroup(request):
-    pass
-
-def viewGroup(request):
-    pass
 
 
 @login_required
@@ -176,6 +102,9 @@ def addSession(request):
         print(err)
     return redirect(monitoring)
 
+
+def addGroups(request):
+    pass
 
 # Model Structure
 
@@ -217,9 +146,9 @@ def addLog(user, user_log):
         print(err)
         return 0
 
-# def Page(GroupName, Array containing all privilege values in order):
+# def addGroup(GroupName, Array containing all privilege values in order):
 #     Add entry containing GroupName and Array
-# input-> Page(user,{print_view:1,addUser:0......})
+# input-> addGroup(user,{print_view:1,addUser:0......})
 # ouput-> if stored in db return 1 else print error and return 0 (refer userLog and checkPrivileges function)
 
 userAccess = {
@@ -235,7 +164,7 @@ userAccess = {
     "delete_session" : 0
 }
 
-def Page(groupName, userAccess):
+def addGroup(groupName, userAccess):
     try:
         create_group_query = group_privileges.objects.create(
                 group_name = groupName,
