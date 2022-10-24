@@ -8,19 +8,20 @@
 </head>
 <body>
     <div class="container">
-        <div class="col">
-          <a href="" class="active">
-          <button>Create Users</button></a></div>
-            <div class="col">
-                <a href="" class="active">
-                <button>Add Users</button></a></div>
-                    <div class="col">
-                        <a href="" class="active">
-                        <button>Modify Users</button></a></div>
-                            <div class="col">
-                                <a href="" class="active">
-                                <button>Delete Users</button></a></div>
+        <form method="post">
+            {% comment %} <!-- action="{% url 'addUser' name='user1's email='user@gmail.com' password='12345678' grp_name='User' %} --> {% endcomment %}
+            {% csrf_token %}
+            <button>Add User</button>
+        </form>
+        <div>
+            <button>Modify User</button>
+        </div>
+        <div>
+            <a href="/delUser"><button>Delete User</button></a>
+        </div>
     </div>                            
-                
+    
+  
+
 </body>
 </html>
