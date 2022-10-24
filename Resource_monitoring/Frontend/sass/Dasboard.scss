@@ -36,7 +36,7 @@ ul li{
 }
 
 ul li a{
-        color: #EE925B;
+        color: #767575;
         font-weight: 500;
         font-style: Medium;
         font-size: 20px;
@@ -50,11 +50,45 @@ ul li a{
 
 }
 
+ul li a:hover{
+        color: #EE925B;
+}
+
 ul li a i{
         width: 30px;
         text-align:center
 }
 
+.logoutbtn button{
+        position: fixed;
+        width: 80px;
+        height: 47px;
+        top: 718px;
+        left: 80px;
+        border-radius: 6px;
+        align-items: center;
+
+        background-color: #767575;
+        border-radius: 6px;
+        border-color: #767575
+}
+
+.logoutbtn button a{
+        Width:100px;
+        Height:30px;
+        Top:927px;
+        Left:150px;
+
+        font-family: 'Poppins';
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+
+        color: white;
+}
 .userbutton button{
         box-sizing: border-box;
         position: absolute;
@@ -72,6 +106,9 @@ ul li a i{
         border-radius: 10px;
 }
 
+ .userbutton button:hover{
+        background-color: #EE925B;
+ }
 .userbutton button a{
         text-decoration: none;
         font-style: normal;
@@ -100,6 +137,11 @@ ul li a i{
         border-radius: 10px;
 }
 
+.grpbutton button:hover{
+        background-color: #EE925B;
+}
+
+
 .grpbutton button a{
         text-decoration: none;
         font-style: normal;
@@ -110,4 +152,40 @@ ul li a i{
         text-align: center;
         color: #3F3F40;
         
+}
+
+.Rectangle1{
+        position: absolute;
+        width: 1080px;
+        height: 296px;
+        left: 342px;
+        top:80px;
+
+        background: white;
+        box-shadow:  0px 4px 8px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+}
+
+.Rectangle2{
+        position: absolute;
+        width: 326px;
+        height: 290px;
+        left: 457px;
+        top: 490px;
+
+        background: #FFFFFF;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+        border-radius: 10px; 
+}
+
+.Rectangle3{
+        position: absolute;
+        width: 326px;
+        height: 290px;
+        left: 930px;
+        top: 490px;
+
+        background: #FFFFFF;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
 }
