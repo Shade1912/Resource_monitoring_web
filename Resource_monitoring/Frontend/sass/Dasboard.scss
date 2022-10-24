@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins','sans-seriff';
+}
+
+body{
+    background-color: #FFFAF8;
+}
+
+h1{
+        font-family: 'Poppins';
+        font-style: SemiBold;
+        font-size: 24px;
+        line-height: 36px;
+        line-height: 100%;
+        text-align: left;
+        vertical-align: top;
+}
+.sidebar{
+        position:fixed;
+        width: 250px;
+        height: 150%;
+        left: 0;
+        background: white;
+        border: none;
+        
+        
+}
+
+ul li{
+     list-style: none;   
+}
+
+ul li a{
+        color: #EE925B;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 20px;
+        line-height: 30px;
+        line-height: 100%;
+        padding: 30px 0;
+        display:block;
+        text-transform: capitalize;
+        text-decoration: none;
+        text-align: left;
+
+}
+
+ul li a i{
+        width: 30px;
+        text-align:center
+}
+
+.userbutton button{
+        box-sizing: border-box;
+        position: absolute;
+        width: 215px;
+        height: 78px;
+        left: 512px;
+        top: 400px;
+        text-align: center;
+        
+
+        background: #FFFAF8;
+        border: 2px solid #EE925B;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.25),
+        inset -4px -4px 5px rgba(0,0,0,0.25);
+        border-radius: 10px;
+}
+
+.userbutton button a{
+        text-decoration: none;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+
+        text-align: center;
+        color: #3F3F40;
+        
+}
+.grpbutton button{
+        box-sizing: border-box;
+        position: absolute;
+        width: 215px;
+        height: 78px;
+        left: 985px;
+        top: 400px;
+        text-align: center;
+        
+
+        background: #FFFAF8;
+        border: 2px solid #EE925B;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.25),
+        inset -4px -4px 5px rgba(0,0,0,0.25);
+        border-radius: 10px;
+}
+
+.grpbutton button a{
+        text-decoration: none;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 30px;
+
+        text-align: center;
+        color: #3F3F40;
+        
+}

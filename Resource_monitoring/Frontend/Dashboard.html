@@ -2,61 +2,30 @@
 <html>
 <head>
     <title>Digicom</title>
-    <style>
-      /* ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 100;
-        width: 20px;
-        background-color: #f1f1f1;
-      } */
-      /* button a {
-        display:flexbox;
-        color: #000;
-        padding: 5px 5px;
-        text-decoration: none;
-      }
-      /* Change the link color on hover */
-      /* button a:hover {
-        background-color: #fad390;
-        color: #fff;
-      }
-      .icon {
-        margin-right: 10px;
-      } */ 
-  </style>
+    <link rel="stylesheet" href="sass/Dasboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"> -->
 </head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> -->
 <body>
-  <div class="container">
-    <div class="col">
-      <a href="/uac" class="active">
-      <button>USER MANAGEMENT</button></a>
-        <div class="col">
-          <a href="/monitoring" class="active">  
-          <button>MONITORING</button></a>
-            <div class="col">
-              <a href="/alert" class="active">
-              <button>ALERTS</button></a>
-                <div class="col">
-                  <a href="/reports" class="active">  
-                  <button>REPORTS</button></a>
-                    <div class="col">
-                      <a href="/timetable" class="active">
-                      <button>TIME TABLE</button></a>
-                        <div class="col">
-                          <a href="/channelinfo" class="active"> 
-                          <button>CHANNEL INFO</button></a>
-                        </div>  
-                    </div>  
-                </div>  
-            </div>  
-        </div>
-    </div>
-  </div>
-  <button><a href="Manageusers.html" class="active">MANAGE USERS</a></button>
-  <button><a href="Managegroups.html">MANAGE GROUPS</a></button>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <label>
+    <!-- SIDEBAR -->
+    <nav class="sidebar">
+      <h1>Logo</h1>
+      <ul>
+      <li><a href="/uac"><i class="fas fa-users-gear"></i>USER MANAGEMENT</a></li>
+      <li><a href="/monitoring"><i class="fa-solid fa-desktop"></i>MONITORING</a></li>
+      <li><a href="/alert"><i class="fas fa-circle-exclamation"></i></i>ALERTS</a></li>
+      <li><a href="/reports"><i class="fa-regular fa-file-lines"></i></i>REPORTS</a></li>
+      <li><a href="/timetable"><i class="fa-solid fa-table"></i></i> TABLE</a></li>
+      <li><a href="/channelinfo"><i class="fa-solid fa-timeline"></i></i>CHANNEL INFO</a></li>
+      </ul>
+    </nav>
+  <!--MANAGE USER BUTTON  -->
+  <div class="userbutton"><button><a href="Manageusers.html">MANAGE USERS</a></button></div>
+  <!-- MANAGE GROUP BUTTON -->
+  <div class="grpbutton"><button><a href="Managegroups.html">MANAGE GROUPS</a></button1></div>
   
 </body>
 </html>
