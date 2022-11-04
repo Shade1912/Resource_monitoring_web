@@ -1,0 +1,56 @@
+{% load static %}
+
+{% block style-links %}
+{% endblock style-links %}
+
+{% block head-tag-scripts %}
+{% endblock head-tag-scripts %}
+
+{% block content %}
+
+
+<div>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <span><label for="firstname">FirstName</label></span>
+            <span><input type="text" id="firstname" name="firstname" value="{{user_details.user_id.first_name}}" /></span>
+        </div>
+        <div>
+            <span><label for="lastname">Lastname</label></span>
+            <span><input type="text" id="lastname" name="lastname" value="{{user_details.user_id.last_name}}" /></span>
+        </div>
+        <div>
+            <span><label for="username">Username</label></span>
+            <span><input type="text" id="username" name="username" value="{{user_details.user_id.username}}" /></span>
+        </div>
+        <select name="group">
+            {% for group_priv in groups  %}
+                <option value="{{group_priv.pk}}" {% if group_priv.pk == user_details.group_name.pk %}selected{% endif %} >{{group_priv.group_name}}</option>
+            {% endfor %}
+        </select>
+        <div>
+            <input type="hidden" value="{{user_details.is_deleted}}"  id="deleteUser" name="deleteUser" />
+            <Button type="submit" id="formSubmit">Submit</Button>
+            <Button onclick="deleteUserField()" type="button">Delete</Button>
+            <script>
+                function deleteUserField(){
+                    let deleteConfirmation = confirm("Are you sure, you want to delete user");
+                    if(deleteConfirmation == 1){
+                        document.getElementById("deleteUser").value = 1
+                        document.getElementById("formSubmit").click()
+                    }
+                    else{
+                        alert("User not deleted")
+                    }
+                }
+            </script>
+        </div>
+    </form>
+</div>
+
+
+{% endblock content %}
+
+{% block scripts %}
+{% endblock scripts %}

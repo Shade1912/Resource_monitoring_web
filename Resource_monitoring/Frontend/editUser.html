@@ -1,0 +1,57 @@
+{% load static %}
+
+{% block style-links %}
+{% endblock style-links %}
+
+{% block head-tag-scripts %}
+{% endblock head-tag-scripts %}
+
+{% block content %}
+
+  
+<table>
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Username
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Group name
+        </th>
+        <th>
+            View
+        </th>
+    </tr>
+    {% for user in all_users  %}
+    <tr>
+        <td>
+            {{user.user_id.pk}}
+        </td>
+        <td>
+            {{user.user_id.username}}
+        </td>
+        <td>
+            {{user.user_id.first_name}} {{user.user_id.last_name}}
+        </td>
+        <td>
+            {{user.group_name.pk}}
+        </td>
+        <td>
+            <a href="/viewUser/{{user.id}}">view</a>
+        </td>
+    </tr>
+    
+    {% endfor %}
+    
+    
+</table>
+
+{% endblock content %}
+
+{% block scripts %}
+{% endblock scripts %}

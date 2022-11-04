@@ -13,7 +13,16 @@ urlpatterns = [
     path('addSession', views.addSession, name="addSession"), 
     path('fetchSession', views.fetchSessions, name="fetchSession"), 
     path('uac', views.uac, name="uac"), 
-    path('addUser/<str:name>/<str:email>/<str:password>/<str:grp_name>', views.addUser, name="addUser"), 
+    path('manageUser', views.manageUser, name="manageUser"), 
+    path('delUser', views.delUser, name="delUser"), 
+    path('deleteUserLink/<int:userId>', views.deleteUserLink, name="deleteUserLink"), 
+    path('editUser', views.editUser, name="editUser"), 
+    path('viewUser/<int:userId>', views.viewUser, name="viewUser"), 
+    path('manageGroup', views.manageGroup, name="manageGroup"), 
+    path('addGroupPage', views.addGroupPage, name="addGroupPage"), 
+    path('editGroup', views.editGroup, name="editGroup"), 
+    path('viewGroup/<int:userId>', views.viewGroup, name="viewGroup"),
+    path('addUser', views.addUser, name="addUser"),
     path('removeSession/<slug:sessionID>', views.removeSession, name="removeSession"), 
 
 ]

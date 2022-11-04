@@ -1,3 +1,4 @@
+from enum import unique
 from pyexpat import model
 from tokenize import group
 from django.db import models
@@ -58,6 +59,7 @@ class user_extra_details(models.Model):
     # username = models.CharField(max_length=50, unique=True)
     # password = models.CharField(max_length=50)
     group_name = models.ForeignKey(group_privileges, on_delete=models.CASCADE, default=None, verbose_name='group_privileges')
+    is_deleted = models.BooleanField()
     session_tokens =  models.CharField(max_length=50)
     class Meta:
         db_table = "user_extra_details"
@@ -82,15 +84,6 @@ class drug_template(models.Model):
     class Meta:
         db_table = "drug_template"
 
-class probe(models.Model):
-    id = models.AutoField(primary_key=True)
-    device_id = models.IntegerField()
-    probe_offset = models.IntegerField()
-    status = models.BooleanField()
-
-    class Meta:
-        db_table = "probe"
-
 class device(models.Model):
     id = models.AutoField(primary_key=True)
     location = models.CharField(max_length=30)
@@ -100,6 +93,16 @@ class device(models.Model):
 
     class Meta:
         db_table = "device"
+
+class probe(models.Model):
+    id = models.AutoField(primary_key=True)
+    probe_offset = models.IntegerField()
+    probe_id = models.SmallIntegerField()
+    device_id = models.ForeignKey(device,unique=True, on_delete=models.CASCADE, default=None, verbose_name='deviceId')
+    status = models.BooleanField()
+    class Meta:
+        db_table = "probe"
+        unique_together = ('device_id', 'probe_id',)
 
 
 # class N_table(models.Model), {
@@ -117,4 +120,3 @@ class device(models.Model):
 #     'last_name': models.CharField(max_length=255),
 # })
 # model = type(name, (models.Model,), attrs)
-
