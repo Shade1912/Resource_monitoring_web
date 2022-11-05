@@ -5,28 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monitoring</title>
+    <link rel="stylesheet" href="sass/Dasboard.css">
 </head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <body>
     <div class="container">
-        <div class="col">
-            <div>
-                <div>
-                    <form action="{% url 'addSession' %}" method="post">
+        <div class="AddSess">
+            <form action="{% url 'addSession' %}" method="post">
                         {% csrf_token %}
-                    <button>Add Session</button></a>
-                    </form>
-                </div>
-                <div>
-                    <form action="{% url 'removeSession' sessionID=19 %}" method="post">
-                        {% csrf_token %}
-                    <button>delete Session</button></a>
-                    </form>
-                </div>
-            </div>
+            <button><a href="addsess.html">Add Session</a></button>
+            </form>
         </div>
-
+        <div class="DelSess">
+            <form action="{% url 'removeSession' sessionID=19 %}" method="post">
+                        {% csrf_token %}
+            <button><a href="Delsess.html">Delete Session</a></button></a>
+            </form>
+        </div>
     </div>                          
 </body>
 </html>

@@ -1,4 +1,7 @@
+@import url(login.css);
+@import url(Monitoring.css);
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 *{
 
 margin: 0;
@@ -20,6 +23,7 @@ h1{
         text-align: left;
         vertical-align: top;
 }
+//=============================== SIDE NAVBAR =============================
 .sidebar{
         position:fixed;
         width: 250px;
@@ -89,6 +93,7 @@ ul li a i{
 
         color: white;
 }
+//============================================= USER BUTTONS ======================================
 .userbutton button{
         box-sizing: border-box;
         position: absolute;
@@ -120,6 +125,7 @@ ul li a i{
         color: #3F3F40;
         
 }
+//================================GROUP BUTTON ======================================
 .grpbutton button{
         box-sizing: border-box;
         position: absolute;
@@ -153,7 +159,7 @@ ul li a i{
         color: #3F3F40;
         
 }
-
+//=============================================================================================================
 .Rectangle1{
         position: absolute;
         width: 1080px;

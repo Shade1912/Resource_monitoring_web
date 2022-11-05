@@ -1,6 +1,7 @@
 {% load static %}
 
 {% block style-links %}
+style links here
 {% endblock style-links %}
 
 {% block head-tag-scripts %}
