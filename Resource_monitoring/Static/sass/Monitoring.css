@@ -1,56 +1,82 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-.AddSess {
+
+
+.AddSess button a{
   box-sizing: border-box;
+
   position: absolute;
   width: 245px;
   height: 223px;
-  left: 985px;
+  left: 1000px;
   top: 100px;
+  
   text-align: center;
   background: #FFFAF8;
   border: 2px solid #EE925B;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25), inset -4px -4px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-}
 
-.AddSess button:hover {
-  background-color: #EE925B;
-}
-
-.AddSess button a {
   text-decoration: none;
   font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 36px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 186px;
   text-align: center;
   color: #3F3F40;
 }
 
-.DelSess {
+.AddSess button a:hover {
+  background-color: #EE925B;
+}
+
+.DelSess button a{
   box-sizing: border-box;
   position: absolute;
   width: 245px;
   height: 223px;
   left: 1270px;
   top: 100px;
+
   text-align: center;
   background: #FFFAF8;
   border: 2px solid #EE925B;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25), inset -4px -4px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-}
 
-.DelSess button:hover {
-  background-color: #EE925B;
-}
-
-.DelSess button a {
   text-decoration: none;
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
-  line-height: 30px;
+  line-height: 186px;
   text-align: center;
   color: #3F3F40;
-}/*# sourceMappingURL=Monitoring.css.map */
+}
+
+.DelSess button a:hover {
+  background-color: #EE925B;
+}
+
+.Rectangle4{
+position: absolute;
+width: 678px;
+height: 223px;
+left: 297px;
+top: 100px;
+
+background: #FFFFFF;
+box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+
+.Rectangle5{
+position: absolute;
+width: 1215px;
+height: 700px;
+left: 297px;
+top: 358px;
+
+background: #FFFFFF;
+box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+/*# sourceMappingURL=Monitoring.css.map */

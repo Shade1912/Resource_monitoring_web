@@ -1,4 +1,49 @@
-<!DOCTYPE html>
+{% extends './template.html' %}
+{% load static %}
+{% block style-links %}
+    <link rel="stylesheet" href="{% static 'sass/Dasboard.css' %}">
+{% endblock style-links %}
+
+{% block head-tag-scripts %}
+{% endblock head-tag-scripts %}
+
+{% block content %}
+<label>
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <h1>Logo</h1>
+    <ul>
+    <li><a href="/uac"><i class="fas fa-users-gear"></i>USER MANAGEMENT</a></li>
+    <li><a href="/monitoring"><i class="fa-solid fa-desktop"></i>MONITORING</a></li>
+    <li><a href="/alert"><i class="fas fa-circle-exclamation"></i></i>ALERTS</a></li>
+    <li><a href="/reports"><i class="fa-regular fa-file-lines"></i></i>REPORTS</a></li>
+    <li><a href="/timetable"><i class="fa-solid fa-table"></i></i> TABLE</a></li>
+    <li><a href="/channelinfo"><i class="fa-solid fa-timeline"></i></i>CHANNEL INFO</a></li>
+    </ul>
+  </nav>
+<!-- Log Out Button -->
+<div class="logoutbtn"><button><a href="#">Log Out</a></button></div>  
+<!--MANAGE USER BUTTON  -->
+    <div class="AddSess">
+    <form action="{% url 'addSession' %}" method="post">
+        {% csrf_token %}
+        <button><a href="addsess.html">Add Session</a></button>
+    </form>
+</div>
+<div class="DelSess">
+    <form action="{% url 'removeSession' sessionID=19 %}" method="post">
+            {% csrf_token %}    
+<button><a href="Delsess.html">Delete Session</a></button></form></div>
+
+<div class="Rectangle4"></div>
+<div class="Rectangle5"></div>
+{% endblock content %}
+
+{% block scripts %}
+{% endblock scripts %}
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,4 +70,4 @@
         </div>
     </div>                          
 </body>
-</html>
+</html> -->

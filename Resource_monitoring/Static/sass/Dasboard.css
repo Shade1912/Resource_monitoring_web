@@ -1,7 +1,6 @@
-@import url();
+@import url(login.css);
 @import url(Monitoring.css);
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
 * {
   margin: 0;
   padding: 0;
