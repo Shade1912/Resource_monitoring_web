@@ -213,6 +213,8 @@ def addSession(request):
         print(err)
     return redirect(monitoring)
 
+def addsess(request):
+    return render(request,"./addsess.html")
 
 # Model Structure
 

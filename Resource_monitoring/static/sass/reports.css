@@ -10,88 +10,31 @@
   border-radius: 10px;
 }
 
-.ReportsRec .Createtemp button {
-  box-sizing: border-box;
-  position: absolute;
-  width: 245px;
-  height: 70px;
-  left: 737px;
-  top: 874px;
-  text-align: center;
-  background: #FFFAF8;
-  border: 2px solid #EE925B;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25), inset -4px -4px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-}
-
-.ReportsRec .Createtemp button:hover {
-  background-color: #EE925B;
-}
-
-.ReportsRec .Createtemp a {
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 50px;
-  text-decoration: none;
-  font-style: normal;
-  text-align: center;
-  color: #3F3F40;
-}
-
-.ReportsRec .PrintReport button {
-  box-sizing: border-box;
-  position: absolute;
-  width: 245px;
-  height: 70px;
-  left: 1050px;
-  top: 874px;
-  text-align: center;
-  background: #FFFAF8;
-  border: 2px solid #EE925B;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25), inset -4px -4px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-}
-
-.ReportsRec .PrintReport button:hover {
-  background-color: #EE925B;
-}
-
-.ReportsRec .PrintReport a {
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 50px;
-  text-decoration: none;
-  font-style: normal;
-  text-align: center;
-  color: #3F3F40;
-}
-
 #report {
   position: absolute;
   width: 144px;
   height: 48px;
-  left: 785px;
-  top: 149px;
+  left: 490px;
+  top: 37px;
   font-family: Poppins;
   font-style: normal;
   color: #0B61BC;
   font-size: 32px;
 }
 
-/* The container for the dropdown textbox */
 .dropdown {
   position: relative;
   display: inline-block;
   width: 444px;
   height: 30px;
-  left: 720px;
+  left: 424px;
   top: 327px;
   border-radius: 5px;
 }
 
 #temp {
   position: absolute;
-  left: 548px;
+  left: 252px;
   top: 327px;
   font-family: "Poppins";
   font-style: normal;
@@ -122,7 +65,7 @@
 #sdate {
   position: absolute;
   width: 105px;
-  left: 430px;
+  left: 140px;
   top: 411px;
   font-family: "Poppins";
   font-style: normal;
@@ -137,7 +80,7 @@
   width: 200px;
   height: 30px;
   top: 380px;
-  left: 556px;
+  left: 260px;
   display: inline-block;
   border-radius: 5px;
   box-sizing: border-box;
@@ -147,7 +90,7 @@
 #edate {
   position: absolute;
   width: 105px;
-  left: 430px;
+  left: 140px;
   top: 473px;
   font-family: "Poppins";
   font-style: normal;
@@ -162,7 +105,7 @@
   width: 200px;
   height: 30px;
   top: 440px;
-  left: 350px;
+  left: 55px;
   display: inline-block;
   border-radius: 5px;
   box-sizing: border-box;
@@ -170,11 +113,105 @@
 }
 
 #stime {
-  width: 101px;
-  height: 30px;
-  left: 896px;
-  top: 410px;
+  position: absolute;
+  width: 105px;
+  left: 600px;
+  top: 411px;
   font-family: Poppins;
   font-style: medium;
   font-size: 18px;
-}/*# sourceMappingURL=reports.css.map */
+}
+
+#Stime {
+  text-align: center;
+  position: absolute;
+  width: 205px;
+  left: 600px;
+  top: 411px;
+  left: 714px;
+  display: inline-block;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+#etime {
+  position: absolute;
+  width: 105px;
+  left: 600px;
+  top: 473px;
+  font-family: Poppins;
+  font-style: medium;
+  font-size: 18px;
+}
+
+#Etime {
+  text-align: center;
+  position: absolute;
+  width: 205px;
+  left: 140px;
+  top: 473px;
+  left: 714px;
+  display: inline-block;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.ReportsRec .Createtemp button {
+  box-sizing: border-box;
+  position: absolute;
+  width: 245px;
+  height: 70px;
+  left: 441px;
+  top: 762px;
+  text-align: center;
+  background: #FFFAF8;
+  border: 2px solid #EE925B;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25), inset -4px -4px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.ReportsRec .Createtemp button:hover {
+  background-color: #EE925B;
+}
+
+.ReportsRec .Createtemp a {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 50px;
+  text-decoration: none;
+  font-style: normal;
+  text-align: center;
+  color: #3F3F40;
+}
+
+.ReportsRec .PrintReport button {
+  box-sizing: border-box;
+  position: absolute;
+  width: 245px;
+  height: 70px;
+  left: 748px;
+  top: 762px;
+  text-align: center;
+  background: #FFFAF8;
+  border: 2px solid #EE925B;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25), inset -4px -4px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.ReportsRec .PrintReport button:hover {
+  background-color: #EE925B;
+}
+
+.ReportsRec .PrintReport a {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 50px;
+  text-decoration: none;
+  font-style: normal;
+  text-align: center;
+  color: #3F3F40;
+}
+
+/* The container for the dropdown textbox *//*# sourceMappingURL=reports.css.map */
