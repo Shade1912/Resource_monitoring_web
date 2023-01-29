@@ -1,15 +1,30 @@
+{% extends './template.html' %}
 {% load static %}
-
 {% block style-links %}
+    <link rel="stylesheet" href="{% static 'sass/Dasboard.css' %}">
 {% endblock style-links %}
 
 {% block head-tag-scripts %}
 {% endblock head-tag-scripts %}
 
 {% block content %}
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <h1>Logo</h1>
+    <ul>
+    <li><a href="/uac"><i class="fas fa-users-gear"></i>USER MANAGEMENT</a></li>
+    <li><a href="/monitoring"><i class="fa-solid fa-desktop"></i>MONITORING</a></li>
+    <li><a href="/alert"><i class="fas fa-circle-exclamation"></i></i>ALERTS</a></li>
+    <li><a href="/reports"><i class="fa-regular fa-file-lines"></i></i>REPORTS</a></li>
+    <li><a href="/channelinfo"><i class="fa-solid fa-timeline"></i></i>CHANNEL INFO</a></li>
+    </ul>
+  </nav>
+<!-- Log Out Button -->
+<div class="logoutbtn"><button><a href="#">Log Out</a></button></div>  
 
-  
-<table>
+<div class="container5">
+
+<table id="Delusr">
     <tr>
         <th>
             ID
@@ -59,7 +74,7 @@
     </script>
     
 </table>
-
+</div>
 {% endblock content %}
 
 {% block scripts %}
