@@ -1,19 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reports</title>
-</head>
-<body>
-    <div class="container">
-        <div class="col">
-          <a href="" class="active">
-          <button>Create Template</button></a></div>
-            <div class="col">
-                <a href="" class="active">
-                <button>Print Report</button></a></div>
+{% extends './template.html' %}
+{% load static %}
+{% block style-links %}
+    <link rel="stylesheet" href="{% static 'sass/Dasboard.css' %}">
+{% endblock style-links %}
+
+{% block head-tag-scripts %}
+{% endblock head-tag-scripts %}
+
+{% block content %}
+    <!-- SIDEBAR -->
+<nav class="sidebar">
+    <h1>Logo</h1>
+    <ul>
+    <li><a href="/Resource_monitoring/Frontend/UserAccessControl.html"><i class="fas fa-users-gear"></i>USER MANAGEMENT</a></li>
+    <li><a href="/monitoring"><i class="fa-solid fa-desktop"></i>MONITORING</a></li>
+    <li><a href="/alert"><i class="fas fa-circle-exclamation"></i></i>ALERTS</a></li>
+    <li><a href="/reports"><i class="fa-regular fa-file-lines"></i></i>REPORTS</a></li>
+    <li><a href="/channelinfo"><i class="fa-solid fa-timeline"></i></i>CHANNEL INFO</a></li>
+    </ul>
+</nav>
+<!-- Log Out Button -->
+<div class="logoutbtn"><button><a href="#">Log Out</a></button></div>  
+
+<div class="Rectangle8"></div>
+
+    <h3 id="report">REPORTS</h3>
+
+    <h3 id="temp">SELECT TEMPLATE</h3>
+    <div class="dropdown">
+        <select id="mySelect" onchange="myFunction()">
+          <option value="Option 1">Template 1</option>
+          <option value="Option 2">Template 2</option>
+          <option value="Option 3">Template 3</option>
+        </select>
+
+        
     </div>
-</body>
-</html>
+    
+    
+    <div class="date">
+        <h3 id="sdate">START DATE</h3>
+        <input type="date" id="SDate">
+
+        <h3 id="edate">END DATE</h3>
+        <input type="date" id="EDate">
+    </div>
+
+    <div class="Time">
+        <h3 id="stime">START Time</h3>
+        <input type="time" id="Stime">
+
+        <h3 id="etime">END TIME</h3>
+        <input type="time" id="Etime">
+    </div>
+
+    <div class="ReportsRec">
+        <div class="Createtemp">
+                {% csrf_token %}
+            <button><a href="#">Create Template</a></button>    
+        </div>
+        <div class="PrintReport">
+            {% csrf_token %}
+        <button><a href="#">Print Report</a></button>
+    </div>
+
+   
+
+</div>
+
+
+
+{% endblock content %}
+
+{% block scripts %}
+{% endblock scripts %}

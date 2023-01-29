@@ -1,60 +1,67 @@
+{% extends './template.html' %}
 {% load static %}
-
 {% block style-links %}
+    <link rel="stylesheet" href="{% static 'sass/Dasboard.css' %}">
 {% endblock style-links %}
 
 {% block head-tag-scripts %}
 {% endblock head-tag-scripts %}
 
 {% block content %}
+<label>
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <h1>Logo</h1>
+    <ul>
+    <li><a href="/Resource_monitoring/Frontend/UserAccessControl.html"><i class="fas fa-users-gear"></i>USER MANAGEMENT</a></li>
+    <li><a href="/monitoring"><i class="fa-solid fa-desktop"></i>MONITORING</a></li>
+    <li><a href="/alert"><i class="fas fa-circle-exclamation"></i></i>ALERTS</a></li>
+    <li><a href="/reports"><i class="fa-regular fa-file-lines"></i></i>REPORTS</a></li>
+    <li><a href="/timetable"><i class="fa-solid fa-table"></i></i> TABLE</a></li>
+    <li><a href="/channelinfo"><i class="fa-solid fa-timeline"></i></i>CHANNEL INFO</a></li>
+    </ul>
+  </nav>
+<!-- Log Out Button -->
+<div class="logoutbtn"><button><a href="#">Log Out</a></button></div>  
 
-<H1>Alerts</H1>
-<table border="1">
-    <tr>
-        <td>
-            Temperature
-        </td>
-        <td>
-            Humidity
-        </td>
-        <td>
-            Temperature in range
-        </td>
-        <td>
-            Humidity in range
-        </td>
-        <td>
-            Session ID
-        </td>
-    </tr>
+<div class="Rectangle6">
+    <h3 style="position:absolute; width: 244px; height: 27px; left: 29px; top: 19px; font-family: Poppins;font-style: normal; color: #0B61BC;">ERROR MESSAGES:</h3>
+        <form id="searchbar1"> 
+        <input type="text" placeholder=" Search...." name="search"> 
+        <button type="submit">Submit</button> 
+        </form>   
+</div> 
 
-    {% for alert in alerts %}
-    <tr>
-        <td>
-            {{alert.temperature}}
-        </td>
-        <td>
-            {{alert.humidity}}
-
-        </td>
-        <td>
-            {{alert.temperature_in_range}}
-            
-        </td>
-        <td>
-            {{alert.humidity_in_range}}
-            
-        </td>
-        <td>
-            {{alert.session_id.pk}}
-            
-        </td>
-    </tr>    
-    {% endfor %}
-    
+<div class="Rectangle7">
+    <h3 style="position:absolute; width: 244px; height: 27px; left: 90px; top: 19px; font-family: Poppins;font-style: normal; color: #0B61BC;">SESSION DETAILS</h3>
+</div>   
 
 
+
+<div class="alertb">
+    <table id="alerttable">
+        <tr>
+            <th>STATUS</th>
+            <th>SERIAL NO.</th>
+            <th>DATE&TIME</th>
+            <th>TEMPERATURE</th>
+            <th>HUMIDITY</th>
+            <th>Temperature in range</th>
+            <th>Humidity in range</th>
+            <th>Session ID</th>
+        </tr>
+        {% for alert in alerts %}
+        <tr>
+            <td>{{alert.temperature}}</td>
+            <td>{{alert.humidity}}</td>
+            <td>{{alert.temperature_in_range}} </td>
+            <td>{{alert.humidity_in_range}}</td>
+            <td>{{alert.session_id.pk}} </td></tr> 
+    </table>
+</div> 
+{% endfor %}
 </table>
+
 {% endblock content %}
 
 {% block scripts %}
