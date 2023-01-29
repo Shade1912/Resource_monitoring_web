@@ -1,52 +1,65 @@
+{% extends './template.html' %}
 {% load static %}
-
 {% block style-links %}
+    <link rel="stylesheet" href="{% static 'sass/Dasboard.css' %}">
 {% endblock style-links %}
 
-{% block head-tag-scripts %} 
+{% block head-tag-scripts %}
 {% endblock head-tag-scripts %}
 
 {% block content %}
 
-<!-- # name,email,password,grp_name -->
+<nav class="sidebar">
+    <h1>Logo</h1>
+    <ul>
+    <li><a href="/uac"><i class="fas fa-users-gear"></i>USER MANAGEMENT</a></li>
+    <li><a href="/monitoring"><i class="fa-solid fa-desktop"></i>MONITORING</a></li>
+    <li><a href="/alert"><i class="fas fa-circle-exclamation"></i></i>ALERTS</a></li>
+    <li><a href="/reports"><i class="fa-regular fa-file-lines"></i></i>REPORTS</a></li>
+    <!-- <li><a href="/timetable"><i class="fa-solid fa-table"></i></i> TABLE</a></li> -->
+    <li><a href="/channelinfo"><i class="fa-solid fa-timeline"></i></i>CHANNEL INFO</a></li>
+    </ul>
+  </nav>
+<!-- Log Out Button -->
+<div class="logoutbtn"><button><a href="#">Log Out</a></button></div> 
 
-<div class="container">
-    <form method="post">
+<div class="container2">
+    <form class="userform" method="post">
         {% csrf_token %}
         <div>
-            <div>
-                <label for="firstname">Firstname</label>
-                <input type="text" id="firstname" name="firstname" placeholder="Firstname" />
+            <div class="fn">
+                <label for="firstname">FIRST NAME:</label>
+                <input type="text" id="firstname" name="firstname" />
             </div>
-            <div>
-                <label for="Lastname">Lastname</label>
-                <input type="text" id="lastname" name="lastname" placeholder="Lastname" />
+            <div class="ln">
+                <label for="Lastname">LAST NAME:</label>
+                <input type="text" id="lastname" name="lastname" />
             </div>
 
             <div>
-                <label for="Email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Email" />
+                <label for="Email">EMAIL:</label>
+                <input type="email" id="email" name="email" />
             </div>
             
             <div>
-                <label for="username">Username</label>
-                <input type="test" id="username" name="username" placeholder="Username" />
+                <label for="username">USERNAME:</label>
+                <input type="test" id="username" name="username"  />
             </div>
             <div>
-                <label for="password">password</label>
-                <input type="password" id="password" name="password" placeholder="Password" />
+                <label for="password">PASSWORD:</label>
+                <input type="password" id="password" name="password" />
             </div>
             
             <div>
-                <label for="group" >Group</label>
+                <label for="group" >GROUP</label>
                 <select name="group_priv_id">
                     {% for group in group_priv %}
                     <option value="{{group.pk}}">{{group.group_name}}</option>
                     {% endfor %}
                 </select>
             </div>
-            <div>
-                <button type="submit">Submit</button>
+            <div class="Submitbtn">
+                <button type="submit"><a>SUBMIT</a></button>
             </div>
             {% for message in messages %}
                 {{message}}
@@ -54,8 +67,6 @@
         </div>
     </form>
 </div>
-
-
 {% endblock content %}
 
 {% block scripts %}

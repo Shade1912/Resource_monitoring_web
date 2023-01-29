@@ -4,6 +4,8 @@
 @import url(reports.css);
 @import url(channelinfo.css);
 @import url(addsess.css);
+@import url(Manageusers.css);
+@import url(addUser.css);
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 * {
   margin: 0;

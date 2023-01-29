@@ -1,24 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Users</title>
-</head>
-<body>
+{% extends './template.html' %}
+{% load static %}
+{% block style-links %}
+    <link rel="stylesheet" href="{% static 'sass/Dasboard.css' %}">
+{% endblock style-links %}
 
-    <div class="container">
-        <div class="col">
-            <a href="/addUser">Add User</a>
-        </div>
-        <div class="col">
-            <a href="/editUser">Modify User</a>
-        </div>
-        <div class="col">
-            <a href="/delUser">Delete User</a>
-        </div>
-    </div>                            
-                
-</body>
-</html>
+{% block head-tag-scripts %}
+{% endblock head-tag-scripts %}
+
+{% block content %}
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <h1>Logo</h1>
+    <ul>
+    <li><a href="/uac"><i class="fas fa-users-gear"></i>USER MANAGEMENT</a></li>
+    <li><a href="/monitoring"><i class="fa-solid fa-desktop"></i>MONITORING</a></li>
+    <li><a href="/alert"><i class="fas fa-circle-exclamation"></i></i>ALERTS</a></li>
+    <li><a href="/reports"><i class="fa-regular fa-file-lines"></i></i>REPORTS</a></li>
+    <li><a href="/channelinfo"><i class="fa-solid fa-timeline"></i></i>CHANNEL INFO</a></li>
+    </ul>
+  </nav>
+<!-- Log Out Button
+<div class="logoutbtn"><button><a href="#">Log Out</a></button></div>   -->
+<div class="container">
+    <div class="adduser"><button><a href="/addUser">Add User</a></button></div>
+    <div class="edituser"><button><a href="/editUser">Edit User</a></button></div>
+    <div class="deluser"><button><a href="/delUser">Delete User</a></button></div> 
+</div>
+{% endblock content %}
+
+{% block scripts %}
+{% endblock scripts %}
