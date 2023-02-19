@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.container4 {
+  position: absolute;
+  width: 1200px;
+  height: 400px;
+  left: 297px;
+  top: 50px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.viewUsr {
+  position: relative;
+  width: 439px;
+  height: 30px;
+  left: 386px;
+  top: 120px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  /* H3
+
+  Heading 3
+  */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 36px;
+  /* identical to box height */
+  color: #3F3F40;
+}
+
+.formSubmit button {
+  box-sizing: border-box;
+  position: absolute;
+  width: 145px;
+  height: 50px;
+  left: 0px;
+  top: 220px;
+  text-align: center;
+  background: #FFFAF8;
+  border: 2px solid #EE925B;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25), inset -4px -4px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.formSubmit button:hover {
+  background-color: #EE925B;
+}
+
+.formSubmit button a {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 50px;
+  text-decoration: none;
+  font-style: normal;
+  text-align: center;
+  color: #3F3F40;
+} /*# sourceMappingURL=addUser.css.map *//*# sourceMappingURL=ViewUser.css.map */

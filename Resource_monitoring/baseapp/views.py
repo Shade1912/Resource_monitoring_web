@@ -183,6 +183,9 @@ def dashboard(request):
     # Sessionkey => (request.session._session_key)
     return render(request,"./Dashboard.html")
 
+def monitor(request):
+    return render(request,"./Monitoring.html")    
+
 def addSession(request):
     random_number = random.randint(0,500)
     timestamp = datetime.now()  
@@ -210,6 +213,8 @@ def addSession(request):
         print(err)
     return redirect(monitoring)
 
+def addsess(request):
+    return render(request,"./addsess.html")
 
 # Model Structure
 

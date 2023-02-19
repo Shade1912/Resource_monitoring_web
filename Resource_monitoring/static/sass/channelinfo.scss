@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.Rectangle10{
+    position: absolute;
+    width: 1120px;
+    height: 320px;
+    left: 297px;
+    top: 100px;
+    
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+#channeltable{
+    left: 30px; 
+    position: absolute;
+    top:50px;
+    width:90%;
+  }
+  
+  td{
+      text-align:center;
+  }
+
+
+
+.chngbtn button{
+    box-sizing: border-box;
+    position: absolute;
+    width: 245px;
+    height: 50px;
+    left: 850px;
+    top: 250px;
+    text-align: center;
+    
+  
+    background: #FFFAF8;
+    border: 2px solid #EE925B;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.25),
+    inset -4px -4px 5px rgba(0,0,0,0.25);
+    border-radius: 10px;
+  }
+  
+.chngbtn button:hover {
+    background-color: #EE925B;
+  }
+  
+.chngbtn button a{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 186px;
+    text-decoration: none;
+    font-style: normal;
+    text-align: center;
+    color: #3F3F40;
+      
+  }
+
+.Rectangle9{
+    position: relative;
+    width: 1120px;
+    height: 550px;
+    left: 297px;
+    top: 450px;
+    
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}  
