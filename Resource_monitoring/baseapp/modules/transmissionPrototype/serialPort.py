@@ -33,11 +33,22 @@ def serial_ports():
 
 
 def serialPort():
-    comport = serial_ports()
-    comport = str(comport)[1:-1]
-    comport = comport.replace("'", "")
-    comport = comport.replace('"', "")
-    #print(serial.tools.list_ports.comports())
-    ser = serial.Serial(comport)
+    # comports = serial_ports()
+    # print(comports)
+    # comports = comports.replace("'", "")
+    # comports = comports.replace('"', "")
+    # print(serial.tool.list_ports.comports())
 
+    ser = serial.Serial(
+    port='COM6',\
+    baudrate=9600,\
+    parity=serial.PARITY_NONE,\
+    stopbits=serial.STOPBITS_ONE,\
+    bytesize=serial.EIGHTBITS,\
+        timeout=50)
+
+    print("connected to: " + ser.portstr)
     return ser
+# serial_ports()
+print(serialPort())
+

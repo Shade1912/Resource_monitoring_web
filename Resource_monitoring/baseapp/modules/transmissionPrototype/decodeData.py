@@ -1,4 +1,5 @@
 import db_connection as dbc
+from serialPort import serialPort 
 
 mycursor = dbc.mydb.cursor()
 
@@ -10,9 +11,13 @@ def hexToInt(hexString):
     # Returning as string while converting as int 
     return str(int(hexString,16))
 try:
-    def decodeData(data):
+    def decodeData(ser):
+        data = ser.readline(50)
+        print("recieved data",data)
+        if len(data) < 3:
+            return "wrong data, try again.."
         # ========== DEFAULT DATA ==========
-        START  = data[0] + "" + data[1] + "" + data[2] + "" + data[3]
+        START  = str(data[0]) + "" + str(data[1]) + "" + str(data[2]) + "" + str(data[3])
         HEADER = hexToInt(data[4]) + "" + hexToInt(data[5]) 
         DATA_LENGTH = int(hexToInt(data[6]) + hexToInt(data[7]))
         UID = None
@@ -111,4 +116,4 @@ try:
 except Exception  as err:
     print("Error", err)
 
-# decodeData(newString)
+print(decodeData(serialPort()))
