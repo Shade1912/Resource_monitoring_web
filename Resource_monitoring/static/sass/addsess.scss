@@ -1,6 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
+.Rect{
+    position: absolute;
+    width: 1120px;
+    height: 605px;
+    left: 300px;
+    top: 100px;
+    
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
 #addsessform{
     position: relative;
     left: 300px;
+}
+
+#maxt{
+    position:absolute; 
+    width: 300px; 
+    height: 24px; 
+    left: 230px; 
+    top: 29px;
+}
+
+#maxh{
+    position:absolute; 
+    width: 300px; 
+    height: 24px; 
+    left: 50px; 
+    top: 78px;
+}
+
+#mint{
+    position:absolute; 
+    width: 300px; 
+    height: 24px; 
+    left: 50px; 
+    top: 133px;
+}
+
+#minh{
+    position:absolute; 
+    width: 300px; 
+    height: 24px; 
+    left: 350px; 
+    top: 133px;
 }

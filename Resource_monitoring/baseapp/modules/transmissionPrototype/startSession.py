@@ -91,4 +91,4 @@ try:
 except Exception as err:
     print("Error",err)
 
-# print(startSession())
+print(startSession())

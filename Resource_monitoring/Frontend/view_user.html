@@ -1,16 +1,29 @@
+{% extends './template.html' %}
 {% load static %}
-
 {% block style-links %}
+    <link rel="stylesheet" href="{% static 'sass/Dasboard.css' %}">
 {% endblock style-links %}
 
 {% block head-tag-scripts %}
 {% endblock head-tag-scripts %}
 
 {% block content %}
-
-
-<div>
-    <form method="post">
+<label>
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <h1>Logo</h1>
+    <ul>
+    <li><a href="/uac"><i class="fas fa-users-gear"></i>USER MANAGEMENT</a></li>
+    <li><a href="/monitoring"><i class="fa-solid fa-desktop"></i>MONITORING</a></li>
+    <li><a href="/alert"><i class="fas fa-circle-exclamation"></i></i>ALERTS</a></li>
+    <li><a href="/reports"><i class="fa-regular fa-file-lines"></i></i>REPORTS</a></li>
+    <li><a href="/channelinfo"><i class="fa-solid fa-timeline"></i></i>CHANNEL INFO</a></li>
+    </ul>
+  </nav>
+<!-- Log Out Button -->
+<div class="logoutbtn"><button><a href="#">Log Out</a></button></div>  
+<div class="container4">
+    <form class="viewUsr" method="post">
         {% csrf_token %}
         <div>
             <span><label for="firstname">FirstName</label></span>
@@ -31,8 +44,8 @@
         </select>
         <div>
             <input type="hidden" value="{{user_details.is_deleted}}"  id="deleteUser" name="deleteUser" />
-            <Button type="submit" id="formSubmit">Submit</Button>
-            <Button onclick="deleteUserField()" type="button">Delete</Button>
+            <Button class="formSubmit" type="submit"><a>Submit</a></Button>
+            <Button onclick="deleteUserField()" id="Delbtn" type="button"><a>Delete</a></Button>
             <script>
                 function deleteUserField(){
                     let deleteConfirmation = confirm("Are you sure, you want to delete user");
@@ -48,8 +61,6 @@
         </div>
     </form>
 </div>
-
-
 {% endblock content %}
 
 {% block scripts %}

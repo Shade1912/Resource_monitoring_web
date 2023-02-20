@@ -1,10 +1,15 @@
+import serial
+from serialPort import serialPort 
+
 def readData(ser):
+    data = ser.readline(50)
+    print("initial data:",data)
     Start = "Z]"
     list1 = ""
     for i in range(2):
         data = ser.read()
         data = data.decode()
-        print(data)
+        print("data:",data)
         list1 = str(list1) +str(data)
     if list1 == "Z]":
         for i in range(2):
@@ -34,4 +39,7 @@ def readData(ser):
             list1 = str(list1) +str(data)
         else:
             list1=""
+        print(list1)
     return list1
+
+print("Read Data:",readData(serialPort()))

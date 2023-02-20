@@ -48,3 +48,5 @@ def writeData(system_data):
     ser = serial.Serial(comport)
     #print(ser.name)
     data = ser.write(system_data)
+    
+writeData(b'Hello03')
