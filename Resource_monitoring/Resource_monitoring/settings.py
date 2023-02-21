@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'resource_monitoring_web',
         'USER':'root',
-        'PASSWORD':'',
+        'PASSWORD':'Qwerty@21',
     }
 }
 

@@ -1,5 +1,5 @@
 import os
-from PyPDF2 import PdfFileMerger, PdfFileReader, PdfFileWriter
+from PyPDF2 import PdfMerger, PdfFileReader, PdfFileWriter
 from addingwatermark import *
 
 def split_pages():
@@ -38,7 +38,7 @@ def split_pages():
         for page in range(input.getNumPages()):
             put_watermark('watermark.pdf', 'page_{}.pdf'.format(page+1), 'page_{}.pdf'.format(page+1))
 
-        merger = PdfFileMerger()
+        merger = PdfMerger()
 
         #Iterate over the list of file names
         # for pdf_file in pdf_files:

@@ -1,6 +1,6 @@
 import mysql.connector
 from fpdf import FPDF
-from PyPDF2 import PdfFileMerger, PdfFileReader, PdfFileWriter
+from PyPDF2 import PdfMerger, PdfFileReader, PdfFileWriter
 from splitpages import *
 
 import db_connection as dbc
@@ -53,7 +53,7 @@ def makingpdf(curr):
 
             pdf.output('report_%s.pdf' %value[1],'F')
 
-        merger = PdfFileMerger()
+        merger = PdfMerger()
 
         for value in curr:
             merger.append('report_%s.pdf' %value[1])

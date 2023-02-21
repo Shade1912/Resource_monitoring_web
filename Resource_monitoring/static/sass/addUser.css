@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-/*# sourceMappingURL=addUser.css.map */
+
 .container2 {
   position: absolute;
   width: 1120px;
@@ -17,7 +17,6 @@
   height: 30px;
   left: 386px;
   top: 120px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   /* H3
