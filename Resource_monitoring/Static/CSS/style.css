@@ -323,7 +323,7 @@ body{
   gap: 50px;
   align-items: center;
   justify-content:center;
-  padding: 20px 0px;
+  padding: 0px 0px;
 }
 
 
@@ -336,6 +336,7 @@ body{
   
   min-height: 400px;
   width: 100%;
+
 }
 
 .maindb .dbtable table{
@@ -345,6 +346,7 @@ body{
   padding: 0;
   width: 100%;
   table-layout: fixed;
+  
 }
 
 
