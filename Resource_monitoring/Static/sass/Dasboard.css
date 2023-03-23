@@ -33,40 +33,126 @@ h1 {
   vertical-align: top;
 }
 
-.sidebar {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  overflow: hidden;
+  font-family: sans-serif;
+  background-color: #FFFAF8;
+  height: 100vh;
+}
+
+.menu {
+  height: 100%;
   position: fixed;
-  width: 250px;
-  height: 150%;
   left: 0;
-  background: white;
-  border: none;
+  top: 0;
+  width: 250px;
+  padding-top: 60px;
+  background-color: white;
+  transition: 0.5s;
+  transform: translateX(-250px);
+}
+
+.logo a {
+  padding: 15px 25px;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: white;
+  /*margin-left: 5px*/
+}
+
+.logo a img {
+  max-width: 140px;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 ul li {
-  list-style: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+  /*text-align: center;*/
+  padding-left: 25px;
+}
+
+ul li:hover {
+  padding-left: 35px;
+  background-color: #EE925B;
 }
 
 ul li a {
+  display: block;
   color: #767575;
+  padding: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.logoutbtn button {
+  position: fixed;
+  width: 80px;
+  height: 47px;
+  top: 718px;
+  left: 80px;
+  border-radius: 6px;
+  align-items: center;
+  background-color: #767575;
+  border-radius: 6px;
+  border-color: #767575;
+}
+
+.logoutbtn button a {
+  Width: 100px;
+  Height: 30px;
+  Top: 927px;
+  Left: 150px;
+  font-family: "Poppins";
   font-weight: 500;
-  font-style: Medium;
   font-size: 20px;
   line-height: 30px;
-  line-height: 100%;
-  padding: 30px 0;
-  display: block;
-  text-transform: capitalize;
   text-decoration: none;
-  text-align: left;
+  display: flex;
+  align-items: center;
+  color: white;
 }
 
-ul li a:hover {
-  color: #EE925B;
+#open {
+  display: none;
 }
 
-ul li a i {
-  width: 30px;
-  text-align: center;
+.open {
+  height: 80px;
+  width: 80px;
+  /*position: absolute;*/
+  /*background-color: #000;*/
+}
+
+.open i {
+  font-size: 25px;
+  cursor: pointer;
+  margin-left: 25px;
+  margin-top: 25px;
+  background-color: #EE925B;
+  padding: 15px 15px;
+  color: white;
+  z-index: 99;
+}
+
+#open:checked ~ .menu {
+  transition: 0.5s;
+  transform: translateX(0);
+}
+
+#open:checked ~ .open i {
+  transition: 0.5s;
+  margin-left: 190px;
+  position: absolute;
 }
 
 .logoutbtn button {
