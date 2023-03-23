@@ -1,117 +1,50 @@
-{% extends './template.html' %}
+{% extends 'template.html' %} 
 {% load static %}
+
 {% block style-links %}
-    <link rel="stylesheet" href="{% static 'sass/Dasboard.css' %}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 {% endblock style-links %}
 
 {% block head-tag-scripts %}
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 {% endblock head-tag-scripts %}
 
 {% block content %}
-<label>
-  <!-- SIDEBAR -->
-  <nav class="sidebar">
-    <h1>Logo</h1>
-    <ul>
-    <li><a href="/uac"><i class="fas fa-users-gear"></i>USER MANAGEMENT</a></li>
-    <li><a href="/monitoring"><i class="fa-solid fa-desktop"></i>MONITORING</a></li>
-    <li><a href="/alert"><i class="fas fa-circle-exclamation"></i></i>ALERTS</a></li>
-    <li><a href="/reports"><i class="fa-regular fa-file-lines"></i></i>REPORTS</a></li>
-    <!-- <li><a href="/timetable"><i class="fa-solid fa-table"></i></i> TABLE</a></li> -->
-    <li><a href="/channelinfo"><i class="fa-solid fa-timeline"></i></i>CHANNEL INFO</a></li>
-    </ul>
-  </nav>
-<!-- Log Out Button -->
-<div class="logoutbtn"><button><a href="#">Log Out</a></button></div>  
-<!--MANAGE USER BUTTON  -->
-    <div class="AddSess">
-    <form action="{% url 'addSession' %}" method="post">
-        {% csrf_token %}
-        <button><a href="./addsess">Add Session</a></button>
-    </form>
-</div>
-<div class="DelSess">
-    <form action="{% url 'removeSession' sessionID=19 %}" method="post">
-            {% csrf_token %}    
-<button><a href="Delsess.html">Delete Session</a></button></form></div>
-
-<div class="Rectangle4">
-    <h3 style="position:absolute; width: 300px; height: 24px; left: 230px; top: 29px;">SERIAL NO. <input type="number"></h3>
-    <h3 style="position:absolute; width: 300px; height: 24px; left: 50px; top: 78px;">Max Temp. <input type="number"></h3>
-    <h3 style="position:absolute; width: 300px; height: 24px; left: 50px; top: 133px;">Min Temp. <input type="number"></h3>
-    <h3 style="position:absolute; width: 300px; height: 24px; left: 350px; top: 78px;">Max Hum. <input type="number"></h3>
-    <h3 style="position:absolute; width: 300px; height: 24px; left: 350px; top: 133px;">Min Hum. <input type="number"></h3>
-    <button style="position: absolute; width:138px; height: 30px; left: 250px; top: 179px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25); border-radius: 10px;font-weight: 500; font-size: 16px; line-height: 24px;">More info</button>
 
 
-</div>
-<div class="Rectangle5">
-    <h3 style="position:absolute; width: 244px; height: 27px; left: 29px; top: 19px; font-family: Poppins;font-style: normal; color: #0B61BC;">MAIN DATABASE</h3>
+<div class="Monitoring-wrapper">
+    <div class="Monitoring-container">
+  
+  
+        <div class="Serial-info">
+            
+        </div>
+  
 
-   
+  
+        <div class="session-details responsive-flex">
+            <div class="details">
+                
+            </div>
+            <div class="Sessbttns responsive-flex">
+                <button>
+                    <a href="#">Add Session</a>
+                </button>
+                <button>
+                    <a href="#">Delete Session</a>
+                </button>
+            </div>
 
-    <div class="searchbox">
-    <form id="searchbar"> 
-    <input type="text" placeholder=" Search...." name="search"> 
-    <button type="submit">Submit</button> 
-    </form>   
+        </div>
+        <div class="maindb responsive-flex">
+            <div class="dbtable">
+  
+            </div>
+        </div>
+  
     </div>
+  </div>
 
-    <table id="dtb">
-        <tr>
-            <th>Serial no.</th>
-            <th>Date&Time</th>
-            <th>Temperature</th>
-            <th>Humidity</th>
-            <th>MAC ID</th>
-            <th>IP Address</th>
-            <th>Session ID</th>
-        </tr>
-        <tr><td>01</td>
-            <td>1-3-23 | 2:00 PM</td>
-            <td>40</td>
-            <td>30</td>
-            <td>###</td>
-            <td>***</td>
-            <td>###</td>
-        </tr>
-        </tr>
-        </table>
-      
-</div>
 {% endblock content %}
 
 {% block scripts %}
 {% endblock scripts %}
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monitoring</title>
-    <link rel="stylesheet" href="sass/Dasboard.css">
-</head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-<body>
-    <div class="container">
-        <div class="AddSess">
-            <form action="{% url 'addSession' %}" method="post">
-                        {% csrf_token %}
-            <button><a href="addsess.html">Add Session</a></button>
-            </form>
-        </div>
-        <div class="DelSess">
-            <form action="{% url 'removeSession' sessionID=19 %}" method="post">
-                        {% csrf_token %}
-            <button><a href="Delsess.html">Delete Session</a></button></a>
-            </form>
-        </div>
-    </div>                          
-</body>
-</html> -->

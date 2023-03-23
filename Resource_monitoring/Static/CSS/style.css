@@ -6,8 +6,8 @@
     box-sizing: border-box;
 }
 :root{
-    --primary-color: #e4e9eb;
-    --secondary-color: #4c4fb1;
+    --primary-color: #FFFAF8;
+    --secondary-color: #EE925B;
     --tertiary-color: #010e14;
 
 
@@ -316,8 +316,8 @@ body{
     gap: 20px;
 }
 .dashboard-wrapper .dashboard-container .godown-info{
-    
-    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
     background-color: white;
     min-height: 400px;
 }
@@ -328,20 +328,35 @@ body{
 
 .dashboard-wrapper .dashboard-container .bttns button{
     padding: 20px 60px;
-}
+    text-align: center;
+    background: #FFFAF8;
+    border: 2px solid #EE925B;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25), inset -4px -4px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+
+.dashboard-wrapper .dashboard-container .bttns button:hover{
+  background-color: #EE925B;
+}  
 .dashboard-wrapper .dashboard-container .bttns button a{
     color: var(--primary-text-color);
     text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #3F3F40;
 }
 .dashboard-wrapper .dashboard-container .extra-details{
-    gap: 10px;
+    gap: 50px;
     align-items: center;
     justify-content: center;
 }
 .dashboard-wrapper .dashboard-container .extra-details .row1,
 .dashboard-wrapper .dashboard-container .extra-details .row2{
     background-color: white;
-    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
     
     min-height: 300px;
     width: 100%;
@@ -351,3 +366,167 @@ body{
         flex-direction: column;
     }
 }
+
+
+
+/*================ MONITORING =======================*/
+
+.responsive-flex{
+  display: flex;
+}
+.Monitoring-wrapper{
+  /* border: 1px solid; */
+}
+.Monitoring-wrapper .Monitoring-container{
+  padding: 10px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Monitoring-wrapper .Monitoring-container .session-details{
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+.Monitoring-wrapper .Monitoring-container .session-details .details{
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  
+  min-height: 300px;
+  width: 100%;
+}
+
+.Monitoring-wrapper .Monitoring-container .session-details .Sessbttns{
+  justify-content: center;
+  gap: 10px;
+}
+
+.Monitoring-wrapper .Monitoring-container .session-details .Sessbttns button{
+  padding: 120px 100px;
+  text-align: center;
+  background: #FFFAF8;
+  border: 2px solid #EE925B;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25), inset -4px -4px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.Monitoring-wrapper .Monitoring-container .session-details .Sessbttns button:hover{
+  background-color: #EE925B;
+}
+
+.Monitoring-wrapper .Monitoring-container .session-details .Sessbttns button a{
+  color: var(--primary-text-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #3F3F40;
+}
+
+.Monitoring-wrapper .Monitoring-container .maindb{
+  gap: 50px;
+  align-items: center;
+  justify-content:center;
+}
+
+
+.Monitoring-wrapper .Monitoring-container .maindb .dbtable{
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  
+  min-height: 400px;
+  width: 100%;
+}
+
+.Monitoring-wrapper .Monitoring-container .maindb .dbtable table{
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+
+
+.Monitoring-wrapper .Monitoring-container .maindb .dbtable table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+.Monitoring-wrapper .Monitoring-container .maindb .dbtable table th,
+.Monitoring-wrapper .Monitoring-container .maindb .dbtable table td {
+  padding: .625em;
+  text-align: center;
+}
+
+.Monitoring-wrapper .Monitoring-container .maindb .dbtable table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .Monitoring-wrapper .Monitoring-container .maindb .dbtable table {
+    border: 0;
+  }
+
+  
+  .Monitoring-wrapper .Monitoring-container .maindb .dbtable table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  .Monitoring-wrapper .Monitoring-container .maindb .dbtable table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  .Monitoring-wrapper .Monitoring-container .maindb .dbtable table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  .Monitoring-wrapper .Monitoring-container .maindb .dbtable table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .Monitoring-wrapper .Monitoring-container .maindb .dbtable table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-flex{
+      flex-direction: column;
+  }
+}
+
+
+/*======================== ALERTS ====================== */
+
