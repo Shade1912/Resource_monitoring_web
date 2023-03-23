@@ -1,4 +1,5 @@
 {% load static %}
+{% extends 'template.html' %} 
 
 {% block style-links %}
 style links here
@@ -8,6 +9,7 @@ style links here
 {% endblock head-tag-scripts %}
 
 {% block content %}
+
 
 {% endblock content %}
 
