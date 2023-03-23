@@ -29,10 +29,60 @@
 
       <div class="extra-details responsive-flex">
           <div class="row1">
-
+            <h2>Users list</h2>
+            <div class="maindb responsive-flex">
+                <div class="dbtable">
+                    <table>
+                        <thead>
+                          <tr>
+                            <th scope="col">Username</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Date joined</th>
+                            <th scope="col">Group</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              {% for user in users %}
+                              <tr>
+                                  <td>{{user.user_id.username}}</td>
+                                  <td>{{user.user_id.first_name}} {{user.user_id.last_name}}</td>
+                                  <td>{{user.user_id.date_joined}}</td>
+                                  <td>{{user.group_name.group_name}}</td>
+                                  <!-- <td>{{user.humidity_lowest_level}} - {{user.humidity_highest_level}}</td> -->
+                              </tr>
+                              {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
           </div>
           <div class="row2">
-
+            <h2>Groups list</h2>
+            <div class="maindb responsive-flex">
+                <div class="dbtable">
+                    <table>
+                        <thead>
+                          <tr>
+                            <th scope="col">Group Id</th>
+                            <th scope="col">Group name</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              {% for group in groups %}
+                              <tr>
+                                  <td>{{group.pk}}</td>
+                                  <td>{{group.group_name}}</td>
+                                  <!-- <td>{{user.humidity_lowest_level}} - {{user.humidity_highest_level}}</td> -->
+                              </tr>
+                              {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
           </div>
       </div>
 
