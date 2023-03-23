@@ -39,29 +39,35 @@
 </div>   
 
 
+<div class="maindb responsive-flex">
+    <div class="dbtable">
+        <table>
+            <thead>
+              <tr>
+                <th scope="col">Session Id</th>
+                <th scope="col">Serial no.</th>
+                <th scope="col">Date & Time</th>
+                <th scope="col">Temperature</th>
+                <th scope="col">Humidity</th>
 
-<div class="alertb">
-    <table id="alerttable">
-        <tr>
-            <th>STATUS</th>
-            <th>SERIAL NO.</th>
-            <th>DATE&TIME</th>
-            <th>TEMPERATURE</th>
-            <th>HUMIDITY</th>
-            <th>Temperature in range</th>
-            <th>Humidity in range</th>
-            <th>Session ID</th>
-        </tr>
-        {% for alert in alerts %}
-        <tr>
-            <td>{{alert.temperature}}</td>
-            <td>{{alert.humidity}}</td>
-            <td>{{alert.temperature_in_range}} </td>
-            <td>{{alert.humidity_in_range}}</td>
-            <td>{{alert.session_id.pk}} </td></tr> 
-    </table>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  {% for alert in alerts %}
+                  <tr>
+                      <td>{{alert.session_id.pk}}</td>
+                      <td>{{alert.session_id.serial}}</td>
+                      <td>{{alert.timestamp}}</td>
+                      <td>{{alert.temperature_in_range}}</td>
+                      <td>{{alert.humidity_in_range}}</td>
+                  </tr>
+                  {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div> 
-{% endfor %}
 </table>
 
 {% endblock content %}

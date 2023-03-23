@@ -14,6 +14,7 @@ class alerts(models.Model):
     humidity = models.FloatField()
     temperature_in_range = models.BooleanField()
     humidity_in_range = models.BooleanField()
+    timestamp = models.DateTimeField( auto_now=False, auto_now_add=False)
      
     class Meta:
         db_table = "Alerts"
@@ -32,6 +33,7 @@ class session_data(models.Model):
     humidity_highest_level = models.FloatField()
     humidity_lowest_level = models.FloatField()
     time_interval = models.TimeField(default= time(0,15,0))
+    timestamp = models.DateTimeField( auto_now=False, auto_now_add=False)
 
     class Meta:
         db_table = "Session_data"

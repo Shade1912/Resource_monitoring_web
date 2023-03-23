@@ -60,7 +60,11 @@ def alert(request):
     return render(request,"./alerts.html",context)
 
 def monitoring(request):
-    return render(request,"./Monitoring.html")
+    sessionData = session_data.objects.all()
+    context = {
+        "Sessions":sessionData
+    }
+    return render(request,"./Monitoring.html",context)
 
 def reports(request):
     return render(request,"./Reports.html")
@@ -211,6 +215,7 @@ def dashboard(request):
     return render(request,"./Dashboard.html")
 
 def monitor(request):
+
     return render(request,"./Monitoring.html")    
 
 def addSession(request):
