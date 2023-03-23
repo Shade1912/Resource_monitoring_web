@@ -45,7 +45,7 @@ def serialPort():
     parity=serial.PARITY_NONE,\
     stopbits=serial.STOPBITS_ONE,\
     bytesize=serial.EIGHTBITS,\
-        timeout=50)
+    timeout=50)
 
     print("connected to: " + ser.portstr)
     return ser

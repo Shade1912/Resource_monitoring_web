@@ -10,6 +10,7 @@
 @import url(ViewUser.css);
 @import url(Deluser.css);
 @import url(ManageGrps.css);
+@import url(addgrp.css);
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -207,3 +208,28 @@ ul li a i{
         border-radius: 10px;
 }
 
+.open{
+        height: 80px;
+        width: 80px;
+        /*position: absolute;*/
+        /*background-color: #000;*/
+      }
+      .open i{
+        font-size: 25px;
+        cursor: pointer;
+        margin-left: 25px;
+        margin-top: 25px;
+        background-color: #EE925B;
+        padding: 15px 15px;
+        color: white;
+        z-index: 99;
+      }
+      #open:checked ~ .menu{
+        transition: 0.5s;
+        transform: translateX(0);
+      }
+      #open:checked ~ .open i{
+        transition: 0.5s;
+        margin-left: 190px;
+        position: absolute;
+      }
