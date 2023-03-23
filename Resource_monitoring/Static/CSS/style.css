@@ -323,7 +323,7 @@ body{
 }
 .dashboard-wrapper .dashboard-container .bttns{
     justify-content: center;
-    gap: 10px;
+    gap: 430px;
 }
 
 .dashboard-wrapper .dashboard-container .bttns button{
@@ -530,3 +530,136 @@ body{
 
 /*======================== ALERTS ====================== */
 
+.responsive-flex{
+  display: flex;
+}
+.Alerts-wrapper{
+  /* border: 1px solid; */
+}
+.Alerts-wrapper .Alerts-container{
+  padding: 10px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Alerts-wrapper .Alerts-container .alertsdb{
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.Alerts-wrapper .Alerts-container .alertsdb .alerts-details{
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  
+  min-height: 400px;
+  width: 100%;
+}
+
+.Alerts-wrapper .Alerts-container .alertsdb .alerts-details table{
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+
+
+.Alerts-wrapper .Alerts-container .alertsdb .alerts-details table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+.Alerts-wrapper .Alerts-container .alertsdb .alerts-details table th,
+.Alerts-wrapper .Alerts-container .alertsdb .alerts-details table td {
+  padding: .625em;
+  text-align: center;
+}
+
+.Alerts-wrapper .Alerts-container .alertsdb .alerts-details table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .Alerts-wrapper .Alerts-container .alertsdb .alerts-details table {
+    border: 0;
+  }
+
+  
+  .Alerts-wrapper .Alerts-container .alertsdb .alerts-details table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  .Alerts-wrapper .Alerts-container .alertsdb .alerts-details table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  .Alerts-wrapper .Alerts-container .alertsdb .alerts-details table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  .Alerts-wrapper .Alerts-container .alertsdb .alerts-details table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .Alerts-wrapper .Alerts-container .alertsdb .alerts-details table td:last-child {
+    border-bottom: 0;
+  }
+}
+.Alerts-wrapper .Alerts-container .Err-details{
+  justify-content: center;
+  gap: 10px;
+}
+
+.Alerts-wrapper .Alerts-container .Err-details .ErrorMsg,
+.Alerts-wrapper .Alerts-container .Err-details .SessDetails{
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  
+  min-height: 300px;
+  width: 100%;
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .responsive-flex{
+      flex-direction: column;
+  }
+}
