@@ -80,7 +80,7 @@ def channelinfo(request):
     return render(request, "./Channelinfo.html",context)
 
 def uac(request):
-    users = user_extra_details.objects.all()
+    users = user_extra_details.objects.filter(is_deleted=0)
     groups = group_privileges.objects.all()
     print(users)
     context = {
