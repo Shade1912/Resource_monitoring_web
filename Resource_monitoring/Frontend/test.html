@@ -1,3 +1,27 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="Mainpage">
+        <div class="Alertscontainer">
+            <div class="Serialinfo">
+            </div>
+            <div class="ErrorMsg">
+            </div>
+            <div class="SessionDetails"></div>
+        </div>
+    </div>
+</body>
+</html> -->
+
 {% extends 'template.html' %} 
 {% load static %}
 
@@ -18,35 +42,40 @@
             <div class="dbtable">
                 <table>
                     <thead>
-                      <tr>
-                        <th scope="col">Session Id</th>
-                        <th scope="col">Serial no.</th>
-                        <th scope="col">Date & Time</th>
-                        <th scope="col">Temperature</th>
-                        <th scope="col">Humidity</th>
-
-                        <!-- <th scope="col">MAC Id</th> -->
-                        <!-- <th scope="col">IP Address</th> -->
-                      </tr>
-                    </thead>
-                    <tbody>
                         <tr>
-                          {% for sessions in Sessions %}
+                          <th scope="col">Session Id</th>
+                          <th scope="col">Serial no.</th>
+                          <th scope="col">Date & Time</th>
+                          <th scope="col">Temperature</th>
+                          <th scope="col">Humidity</th>
+          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          {% for alert in alerts %}
                           <tr>
-                              <td>{{alerts.session_id.pk}}</td>
-                              <td>{{alerts.session_id.serial}}</td>
-                              <td>{{alerts.timestamp}}</td>
-                              <td>{{sessions.temp_lowest_level}} - {{sessions.temp_highest_level}}</td>
-                              <td>{{sessions.humidity_lowest_level}} - {{sessions.humidity_highest_level}}</td>
-                              <!-- <td>{{sessions.temp_highest_level}}</td> -->
-                              <!-- <td>{{sessions.temp_highest_level}}</td> -->
+                              <td>{{alert.session_id.pk}}</td>
+                              <td>{{alert.session_id.serial}}</td>
+                              <td>{{alert.temperature_in_range}}</td>
+                              <td>{{alert.humidity_in_range}}</td>
                           </tr>
                           {% endfor %}
                         </tr>
                     </tbody>
-                </table>
+                  </table>
+  
             </div>
         </div>
+
+
+        <div class="Probes responsive-flex">
+            <div class="Probes-details">
+                
+            </div>
+
+        </div>
+        
   
     </div>
   </div>
