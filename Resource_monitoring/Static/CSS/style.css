@@ -188,9 +188,136 @@ body{
 
 
 
+
+
+
 /*========================================
-             Responsive Table
+            Dashboard - UAC 
 ======================================== */
+
+.dashboard-wrapper{
+    /* border: 1px solid; */
+}
+.dashboard-wrapper .dashboard-container{
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.dashboard-wrapper .dashboard-container .godown-info{
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: white;
+    min-height: 400px;
+}
+.dashboard-wrapper .dashboard-container .bttns{
+    justify-content: center;
+    gap: 430px;
+}
+
+.dashboard-wrapper .dashboard-container .bttns button{
+    padding: 20px 60px;
+    text-align: center;
+    background: #FFFAF8;
+    border: 2px solid #EE925B;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25), inset -4px -4px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+
+.dashboard-wrapper .dashboard-container .bttns button:hover{
+  background-color: #EE925B;
+}  
+.dashboard-wrapper .dashboard-container .bttns button a{
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #3F3F40;
+}
+.dashboard-wrapper .dashboard-container .extra-details{
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-wrapper .dashboard-container .extra-details .row1,
+.dashboard-wrapper .dashboard-container .extra-details .row2{
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    
+    min-height: 300px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+  .responsive-flex{
+      flex-direction: column;
+  }
+}
+
+/*========================================
+              MONITORING 
+========================================*/
+
+
+
+
+.Monitoring-wrapper{
+  /* border: 1px solid; */
+}
+
+.Monitoring-wrapper .Monitoring-container{
+  padding: 10px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Monitoring-wrapper .Monitoring-container .session-details{
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+.Monitoring-wrapper .Monitoring-container .session-details .details{
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  
+  min-height: 300px;
+  width: 100%;
+}
+
+.Monitoring-wrapper .Monitoring-container .session-details .Sessbttns{
+  justify-content: center;
+  gap: 10px;
+}
+
+.Monitoring-wrapper .Monitoring-container .session-details .Sessbttns button{
+  padding: 120px 100px;
+  text-align: center;
+  background: #FFFAF8;
+  border: 2px solid #EE925B;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25), inset -4px -4px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.Monitoring-wrapper .Monitoring-container .session-details .Sessbttns button:hover{
+  background-color: #EE925B;
+}
+
+.Monitoring-wrapper .Monitoring-container .session-details .Sessbttns button a{
+  color: var(--primary-text-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #3F3F40;
+}
 
 .maindb{
   gap: 50px;
@@ -286,223 +413,6 @@ body{
   }
 }
 
-
-
-/*========================================
-            Dashboard - UAC 
-======================================== */
-
-.dashboard-wrapper{
-    /* border: 1px solid; */
-}
-.dashboard-wrapper .dashboard-container{
-    padding: 20px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.dashboard-wrapper .dashboard-container .godown-info{
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    background-color: white;
-    min-height: 400px;
-}
-.dashboard-wrapper .dashboard-container .bttns{
-    justify-content: center;
-    gap: 430px;
-}
-
-.dashboard-wrapper .dashboard-container .bttns button{
-    padding: 20px 60px;
-    text-align: center;
-    background: #FFFAF8;
-    border: 2px solid #EE925B;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25), inset -4px -4px 5px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-  }
-
-.dashboard-wrapper .dashboard-container .bttns button:hover{
-  background-color: #EE925B;
-}  
-.dashboard-wrapper .dashboard-container .bttns button a{
-    color: var(--primary-text-color);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: center;
-    color: #3F3F40;
-}
-.dashboard-wrapper .dashboard-container .extra-details{
-    gap: 50px;
-    align-items: center;
-    justify-content: center;
-}
-.dashboard-wrapper .dashboard-container .extra-details .row1,
-.dashboard-wrapper .dashboard-container .extra-details .row2{
-    background-color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    
-    min-height: 300px;
-    width: 100%;
-}
-
-
-/*========================================
-              MONITORING 
-========================================*/
-
-
-
-
-.Monitoring-wrapper{
-  /* border: 1px solid; */
-}
-
-.Monitoring-wrapper .Monitoring-container{
-  padding: 10px 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.Monitoring-wrapper .Monitoring-container .session-details{
-  gap: 50px;
-  align-items: center;
-  justify-content: center;
-}
-.Monitoring-wrapper .Monitoring-container .session-details .details{
-  justify-content: center;
-  gap: 10px;
-  background-color: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  
-  min-height: 300px;
-  width: 100%;
-}
-
-.Monitoring-wrapper .Monitoring-container .session-details .Sessbttns{
-  justify-content: center;
-  gap: 10px;
-}
-
-.Monitoring-wrapper .Monitoring-container .session-details .Sessbttns button{
-  padding: 120px 100px;
-  text-align: center;
-  background: #FFFAF8;
-  border: 2px solid #EE925B;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25), inset -4px -4px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-}
-
-.Monitoring-wrapper .Monitoring-container .session-details .Sessbttns button:hover{
-  background-color: #EE925B;
-}
-
-.Monitoring-wrapper .Monitoring-container .session-details .Sessbttns button a{
-  color: var(--primary-text-color);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 30px;
-  text-align: center;
-  color: #3F3F40;
-}
-
-
-/* ========================================
-              Alerts
-========================================*/
-
-
-.Monitoring-wrapper .Monitoring-container .maindb .dbtable{
-  justify-content: center;
-  gap: 10px;
-  background-color: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  
-  min-height: 400px;
-  width: 100%;
-}
-
-.Monitoring-wrapper .Monitoring-container .maindb .dbtable table{
-  border: 1px solid #ccc;
-  border-collapse: collapse;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  table-layout: fixed;
-}
-
-
-
-.Monitoring-wrapper .Monitoring-container .maindb .dbtable table tr {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  padding: .35em;
-}
-
-.Monitoring-wrapper .Monitoring-container .maindb .dbtable table th,
-.Monitoring-wrapper .Monitoring-container .maindb .dbtable table td {
-  padding: .625em;
-  text-align: center;
-}
-
-.Monitoring-wrapper .Monitoring-container .maindb .dbtable table th {
-  font-size: .85em;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-@media screen and (max-width: 600px) {
-  .Monitoring-wrapper .Monitoring-container .maindb .dbtable table {
-    border: 0;
-  }
-
-  
-  .Monitoring-wrapper .Monitoring-container .maindb .dbtable table thead {
-    border: none;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-  
-  .Monitoring-wrapper .Monitoring-container .maindb .dbtable table tr {
-    border-bottom: 3px solid #ddd;
-    display: block;
-    margin-bottom: .625em;
-  }
-  
-  .Monitoring-wrapper .Monitoring-container .maindb .dbtable table td {
-    border-bottom: 1px solid #ddd;
-    display: block;
-    font-size: .8em;
-    text-align: right;
-  }
-  
-  .Monitoring-wrapper .Monitoring-container .maindb .dbtable table td::before {
-    /*
-    * aria-label has no advantage, it won't be read inside a table
-    content: attr(aria-label);
-    */
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  .Monitoring-wrapper .Monitoring-container .maindb .dbtable table td:last-child {
-    border-bottom: 0;
-  }
-}
-
 @media (max-width: 768px) {
   .responsive-flex{
       flex-direction: column;
@@ -510,7 +420,10 @@ body{
 }
 
 
-/*======================== ALERTS ====================== */
+/* ========================================
+              Alerts
+========================================*/
+
 
 .responsive-flex{
   display: flex;
@@ -635,9 +548,171 @@ body{
 }
 
 
+@media (max-width: 768px) {
+  .responsive-flex{
+      flex-direction: column;
+  }
+}
+
+
+/*======================== Reports ====================== */
+
+
+.responsive-flex{
+  display: flex;
+}
+.Reports-wrapper{
+  /* border: 1px solid; */
+}
+.Reports-wrapper .Reports-container{
+  padding: 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.Reports-wrapper .Reports-container .Reportsbox{
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  
+  min-height: 600px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .responsive-flex{
+      flex-direction: column;
+  }
+}
+
+
+/* =================CHANNEL INFO====================== */
+
+
+.responsive-flex{
+  display: flex;
+}
+.ChannelInfo-wrapper{
+  /* border: 1px solid; */
+}
+.ChannelInfo-wrapper .ChannelInfo-container{
+  padding: 10px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ChannelInfo-wrapper .ChannelInfo-container .alertsdb{
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.ChannelInfo-wrapper .ChannelInfo-container .alertsdb .alerts-details{
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  
+  min-height: 400px;
+  width: 100%;
+}
+
+.ChannelInfo-wrapper .ChannelInfo-container .alertsdb .alerts-details table{
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
 
 
 
+.Alerts-wrapper .Alerts-container .alertsdb .alerts-details table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+.Alerts-wrapper .Alerts-container .alertsdb .alerts-details table th,
+.Alerts-wrapper .Alerts-container .alertsdb .alerts-details table td {
+  padding: .625em;
+  text-align: center;
+}
+
+.Alerts-wrapper .Alerts-container .alertsdb .alerts-details table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .Alerts-wrapper .Alerts-container .alertsdb .alerts-details table {
+    border: 0;
+  }
+
+  
+  .Alerts-wrapper .Alerts-container .alertsdb .alerts-details table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  .Alerts-wrapper .Alerts-container .alertsdb .alerts-details table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  .Alerts-wrapper .Alerts-container .alertsdb .alerts-details table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  .Alerts-wrapper .Alerts-container .alertsdb .alerts-details table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .Alerts-wrapper .Alerts-container .alertsdb .alerts-details table td:last-child {
+    border-bottom: 0;
+  }
+}
+.Alerts-wrapper .Alerts-container .Err-details{
+  justify-content: center;
+  gap: 10px;
+}
+
+.Alerts-wrapper .Alerts-container .Err-details .ErrorMsg,
+.Alerts-wrapper .Alerts-container .Err-details .SessDetails{
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  
+  min-height: 300px;
+  width: 100%;
+}
 
 
 @media (max-width: 768px) {

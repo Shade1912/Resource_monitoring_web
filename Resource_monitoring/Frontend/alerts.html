@@ -1,74 +1,87 @@
-{% extends './template.html' %}
-{% load static %}
-{% block style-links %}
-    <link rel="stylesheet" href="{% static 'sass/Dasboard.css' %}">
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="Mainpage">
+        <div class="Alertscontainer">
+            <div class="Serialinfo">
+            </div>
+            <div class="ErrorMsg">
+            </div>
+            <div class="SessionDetails"></div>
+        </div>
+    </div>
+</body>
+</html> -->
+
+{% extends 'template.html' %} 
+{% load static %}
+
+{% block style-links %}
+
 {% endblock style-links %}
 
 {% block head-tag-scripts %}
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 {% endblock head-tag-scripts %}
 
 {% block content %}
-<label>
-  <!-- SIDEBAR -->
-  <nav class="sidebar">
-    <h1>Logo</h1>
-    <ul>
-    <li><a href="/uac"><i class="fas fa-users-gear"></i>USER MANAGEMENT</a></li>
-    <li><a href="/monitoring"><i class="fa-solid fa-desktop"></i>MONITORING</a></li>
-    <li><a href="/alert"><i class="fas fa-circle-exclamation"></i></i>ALERTS</a></li>
-    <li><a href="/reports"><i class="fa-regular fa-file-lines"></i></i>REPORTS</a></li>
-    <!-- <li><a href="/timetable"><i class="fa-solid fa-table"></i></i> TABLE</a></li> -->
-    <li><a href="/channelinfo"><i class="fa-solid fa-timeline"></i></i>CHANNEL INFO</a></li>
-    </ul>
-  </nav>
-<!-- Log Out Button -->
-<div class="logoutbtn"><button><a href="#">Log Out</a></button></div>  
-
-<div class="Rectangle6">
-    <h3 style="position:absolute; width: 244px; height: 27px; left: 29px; top: 19px; font-family: Poppins;font-style: normal; color: #0B61BC;">ERROR MESSAGES:</h3>
-        <form id="searchbar1"> 
-        <input type="text" placeholder=" Search...." name="search"> 
-        <button type="submit">Submit</button> 
-        </form>   
-</div> 
-
-<div class="Rectangle7">
-    <h3 style="position:absolute; width: 244px; height: 27px; left: 90px; top: 19px; font-family: Poppins;font-style: normal; color: #0B61BC;">SESSION DETAILS</h3>
-</div>   
 
 
-<div class="maindb responsive-flex">
-    <div class="dbtable">
-        <table>
-            <thead>
-              <tr>
-                <th scope="col">Session Id</th>
-                <th scope="col">Serial no.</th>
-                <th scope="col">Date & Time</th>
-                <th scope="col">Temperature</th>
-                <th scope="col">Humidity</th>
+<div class="Alerts-wrapper">
+    <div class="Alerts-container">
+  
+        <div class="alertsdb responsive-flex">
+            <div class="alerts-details">
+                <table>
+                    <thead>
+                        <tr>
+                          <th scope="col">Session Id</th>
+                          <th scope="col">Serial no.</th>
+                          <th scope="col">Date & Time</th>
+                          <th scope="col">Temperature</th>
+                          <th scope="col">Humidity</th>
+          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          {% for alert in alerts %}
+                          <tr>
+                              <td>{{alert.session_id.pk}}</td>
+                              <td>{{alert.session_id.serial}}</td>
+                              <td>{{alert.temperature_in_range}}</td>
+                              <td>{{alert.humidity_in_range}}</td>
+                          </tr>
+                          {% endfor %}
+                        </tr>
+                    </tbody>
+                  </table>
+  
+            </div>
+        </div>
 
-              </tr>
-            </thead>
-            <tbody>
-                <tr>
-                  {% for alert in alerts %}
-                  <tr>
-                      <td>{{alert.session_id.pk}}</td>
-                      <td>{{alert.session_id.serial}}</td>
-                      <td>{{alert.timestamp}}</td>
-                      <td>{{alert.temperature_in_range}}</td>
-                      <td>{{alert.humidity_in_range}}</td>
-                  </tr>
-                  {% endfor %}
-                </tr>
-            </tbody>
-        </table>
+
+        <div class="Err-details responsive-flex">
+            <div class="ErrorMsg">
+                
+            </div>
+            <div class="SessDetails">
+            
+            </div>
+
+        </div>
+        
+  
     </div>
-</div> 
-</table>
+  </div>
 
 {% endblock content %}
 

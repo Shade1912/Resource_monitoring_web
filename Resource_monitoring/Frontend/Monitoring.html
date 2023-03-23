@@ -16,7 +16,7 @@
   
   
         <div class="Serial-info">
-
+            
         </div>
   
 
@@ -25,19 +25,12 @@
             <div class="details">
                 
             </div>
-
             <div class="Sessbttns responsive-flex">
                 <button>
-                     <form action="{% url 'addSession' %}" method="post">
-                        {% csrf_token %}
-                          <a href="./addsess">Add Session</a>
-                    </form>
+                    <a href="#">Add Session</a>
                 </button>
                 <button>
-                  <form action="{% url 'removeSession' sessionID=19 %}" method="post">
-                    {% csrf_token %}      
-                      <a href="Delsess.html">Delete Session</a>
-                  </form>
+                    <a href="#">Delete Session</a>
                 </button>
             </div>
 
@@ -52,6 +45,7 @@
                         <th scope="col">Date & Time</th>
                         <th scope="col">Temperature</th>
                         <th scope="col">Humidity</th>
+
                         <!-- <th scope="col">MAC Id</th> -->
                         <!-- <th scope="col">IP Address</th> -->
                       </tr>
@@ -62,7 +56,7 @@
                           <tr>
                               <td>{{sessions.pk}}</td>
                               <td>{{sessions.serial}}</td>
-                              <td>{{sessions.date}}</td>
+                              <td>{{sessions.timestamp}}</td>
                               <td>{{sessions.temp_lowest_level}} - {{sessions.temp_highest_level}}</td>
                               <td>{{sessions.humidity_lowest_level}} - {{sessions.humidity_highest_level}}</td>
                               <!-- <td>{{sessions.temp_highest_level}}</td> -->
@@ -74,6 +68,18 @@
                 </table>
             </div>
         </div>
+
+
+        <div class="Err-details responsive-flex">
+            <div class="ErrorMsg">
+                
+            </div>
+            <div class="SessDetails">
+            
+            </div>
+
+        </div>
+        
   
     </div>
   </div>
