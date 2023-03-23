@@ -24,6 +24,7 @@ urlpatterns = [
     path('viewGroup/<int:userId>', views.viewGroup, name="viewGroup"),
     path('addUser', views.addUser, name="addUser"),
     path('removeSession/<slug:sessionID>', views.removeSession, name="removeSession"), 
-    path('addsess', views.addsess, name="addsess")
+    path('addsess', views.addsess, name="addsess"),
+    path('testPage', views.testPage, name="testPage")
 
 ]

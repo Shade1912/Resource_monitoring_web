@@ -462,3 +462,7 @@ def removeSession(request,sessionID):
 
 
 # login,  ajax for continuous data of micro cont* 
+
+
+def testPage(request):
+    return render(request,"./test.html")
