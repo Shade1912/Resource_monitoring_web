@@ -3,6 +3,7 @@
 {% block style-links %}
     <link rel="stylesheet" href="{% static 'sass/Dasboard.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 {% endblock style-links %}
 
 {% block head-tag-scripts %}
@@ -11,7 +12,6 @@
 
 {% block content %}
 <label>
-  
   <!-- SIDEBAR -->
   <nav class="sidebar">
     <h1>Logo</h1>
@@ -24,14 +24,49 @@
     <li><a href="/channelinfo"><i class="fa-solid fa-timeline"></i></i>CHANNEL INFO</a></li>
     </ul>
   </nav>
-<!-- Log Out Button
-<div class="logoutbtn"><button><a href="#">Log Out</a></button></div>   -->
-<div class="container">
-    <div class="addgroup"><button><a href="/addGroupPage">Add Group</a></button></div>
-    <div class="modifygroup"><button><a href="/editGroup">Modify Group</a></button></div>
-    <div class="delgroup"><button><a href="/delGroup">Delete Group</a></button></div> 
-</div>                            
+<!-- Log Out Button -->
+<div class="logoutbtn"><button><a href="#">Log Out</a></button></div>  
 
+<div class="container5">
+
+<table id="Delusr">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Group name
+        </th>
+        <th>
+            Action
+        </th>
+    </tr>
+    {% for group in groups  %}
+    <tr>
+        <td>
+            {{group.pk}}
+        </td>
+        <td>
+            {{group.group_name}} 
+        </td>
+        <td>
+            <a onclick="confirmDelete('/deleteGroupLink/{{group.pk}}','{{group.group_name}}')">Delete</a>
+        </td>
+    </tr>
+    
+    {% endfor %}
+    <script>
+        function confirmDelete(link,grpname){
+            let confirmation = confirm(`group ${grpname}, will get deleted, are you sure`)
+            if(confirmation == true){
+                window.location.href = link
+                alert("deleted")
+            }
+        }
+    </script>
+    
+</table>
+</div>
 {% endblock content %}
 
 {% block scripts %}

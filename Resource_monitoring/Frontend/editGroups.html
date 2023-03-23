@@ -8,6 +8,96 @@
 
 {% block content %}
 
+<div class="add-group-form">
+    <form method="POST" id="addGroupForm">
+        {% csrf_token %}
+
+        <div>
+            <span>
+                <label for="groupname">Gorup Name</label>
+            </span>
+            <span>
+                <select name="grp_name" onchange='changePrivVal(this.value)' id="">
+                    {% for group in groups %}
+                        <option value="{{group.group_name}}">{{group.group_name}}</option>
+                    {% endfor %}
+                </select>
+            </span>
+        </div>
+
+        <div>
+            <h3>Permissions</h3>
+            <span>
+                <input type="checkbox" name="groupPermissions" id=""> Print report
+            </span><br>
+
+            <span>
+                <input type="checkbox" name="groupPermissions" id=""> View time table
+            </span><br>
+            <span>
+                <input type="checkbox" name="groupPermissions" id=""> View channel info
+            </span><br>
+            <span>
+                <input type="checkbox" name="groupPermissions" id=""> Create User
+            </span><br>
+            <span>
+                <input type="checkbox" name="groupPermissions" id=""> Delete User
+            </span><br>
+            <span>
+                <input type="checkbox" name="groupPermissions" id=""> Create Group
+            </span><br>
+            <span>
+                <input type="checkbox" name="groupPermissions" id=""> Delete Group
+            </span><br>
+            <span>
+                <input type="checkbox" name="groupPermissions" id=""> Group List
+            </span><br>
+            <span>
+                <input type="checkbox" name="groupPermissions" id=""> Add session
+            </span><br>            <span>
+                <input type="checkbox" name="groupPermissions" id=""> Delete session
+            </span><br>
+        </div>
+        <input type="text" id="permsArray" name="permArray" placeholder="Permissions">
+        <div>
+            <button type="button" onclick="showGroupPermissions()">Show</button>
+        </div>
+
+        <script>
+
+            function changePrivVal(val){
+                {% for grp  in groups %}
+                    {%  if grp.group_name == val %}
+                        for (let perms = 0; perms < 10; perms++) {
+                            perm_isChecked = document.getElementsByName("groupPermissions")[perms].checked;
+                            console.log({{grp}})
+                        }
+                    {% endif %}
+                {% endfor %}
+            }
+
+            function showGroupPermissions(){
+                let permArray = ""
+                for (let perms = 0; perms < 10; perms++) {
+                    perm_isChecked = document.getElementsByName("groupPermissions")[perms].checked;
+                    if(perm_isChecked == true){
+                        perm_isChecked = 1
+                    }
+                    else{
+                        perm_isChecked = 0
+                    }
+                    permArray = permArray + perm_isChecked
+                }
+                document.getElementById("permsArray").value = permArray
+                document.getElementById("addGroupForm").submit()
+            }
+        </script>
+
+    </form>
+</div>
+
+
+
 {% endblock content %}
 
 {% block scripts %}
