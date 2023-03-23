@@ -7,7 +7,7 @@ from baseapp.models import group_privileges,userlogs, alerts,session_data, user_
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-
+from django.contrib import messages #import messages
 
 import sys
 import glob
@@ -92,6 +92,7 @@ def uac(request):
 
 def addUser(request):
     groups_priv = group_privileges.objects.all()
+    mssge = ""
     if request.method == "POST":
         firstname = request.POST["firstname"]
         lastname = request.POST["lastname"]
@@ -99,25 +100,31 @@ def addUser(request):
         username = request.POST["username"]
         password = request.POST["password"]
         group_priv_id = request.POST["group_priv_id"]
-        createUser(firstname,lastname,email,username,password,group_priv_id)
+        mssge = createUser(firstname,lastname,email,username,password,group_priv_id)
+        messages.warning(request,mssge)
     context = {
-        "group_priv": groups_priv
+        "group_priv": groups_priv,
+        "alert" : mssge
     }
     return render(request, "./addUser.html",context)
 
 def createUser(firstname,lastname,email,user_name,Password,group_Name):
     try:
-        add_user_query = User.objects.create(
-            username = user_name,
-            first_name = firstname,
-            last_name = lastname,
-            email = email,
-            password = Password,
-        )
-        add_user_query.save()
-        user_id = add_user_query.pk
-        addUserExtraDetails(user_id, group_Name)
-        return "Creating User..."
+        check_username = User.objects.filter(username = user_name).count()
+        if(check_username > 0):
+            return "Username already exist"
+        else:
+            add_user_query = User.objects.create(
+                username = user_name,
+                first_name = firstname,
+                last_name = lastname,
+                email = email,
+                password = Password,
+            )
+            add_user_query.save()
+            user_id = add_user_query.pk
+            addUserExtraDetails(user_id, group_Name)
+            return "User created"
     except Exception as err:
         print(err)
         return "Error creating user"
