@@ -23,9 +23,10 @@
         }
 
 body{
-    background-color: #FFFAF8;
-}
-
+        font-family: sans-serif; 
+        background-color: #FFFAF8;
+        height: 100vh;  
+        }
 h1{
         font-family: 'Poppins';
         font-style: SemiBold;
@@ -36,19 +37,9 @@ h1{
         vertical-align: top;
 }
 //=============================== SIDE NAVBAR =============================
-*{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        list-style: none;
-        text-decoration: none;
-      }
-      body{
-        overflow: hidden;
-        font-family: sans-serif; 
-        background-color: #FFFAF8;
-        height: 100vh;  
-      }
+nav{
+        max-width: 400px;
+}
       
       .menu{
         height: 100%;

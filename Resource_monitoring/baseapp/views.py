@@ -42,8 +42,6 @@ def read_data_from_port():
 read_data_from_port()
 # from background_task import background
 
-# Create your views here.
-# view - Home, Login, Logout, User Management, addSession, monitoring, alerts, reports, channel info
 
 def check_access(token, func_name):
     pass
