@@ -11,63 +11,61 @@
 {% block content %}
 
 
-<div class="Alerts-wrapper">
-    <div class="Alerts-container">
+<div class="Monitoring-wrapper">
+    <div class="Monitoring-container">
   
-        <div class="alertsdb responsive-flex">
-            <div class="alerts-details">
+  
+        <div class="Serial-info">
+            
+        </div>
+  
+
+  
+        <div class="session-details responsive-flex">
+            <div class="details">
+                
+            </div>
+            <div class="Sessbttns responsive-flex">
+                <button>
+                    <a href="#">Add Session</a>
+                </button>
+                <button>
+                    <a href="#">Delete Session</a>
+                </button>
+            </div>
+
+        </div>
+        <div class="maindb responsive-flex">
+            <div class="dbtable">
                 <table>
                     <thead>
                       <tr>
+                        <th scope="col">Session Id</th>
                         <th scope="col">Serial no.</th>
                         <th scope="col">Date & Time</th>
                         <th scope="col">Temperature</th>
                         <th scope="col">Humidity</th>
-                        <th scope="col">MAC Id</th>
-                        <th scope="col">IP Address</th>
-                        <th scope="col">Session Id</th>
+
+                        <!-- <th scope="col">MAC Id</th> -->
+                        <!-- <th scope="col">IP Address</th> -->
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td data-label="Serial no.">01</td>
-                        <td data-label="Date & Time">04/01/2016-04:30PM</td>
-                        <td data-label="Temperature">40</td>
-                        <td data-label="Humidity">30</td>
-                        <td data-label="MAC Id">1651</td>
-                        <td data-label="IP Address">192.161.01</td>
-                        <td data-label="Session Id">0352</td>
-                      </tr>
-                      <tr>
-                        <td scope="row" data-label="Serial no.">02</td>
-                        <td data-label="Date & Time">04/01/2016-04:30PM</td>
-                        <td data-label="Temperature">40</td>
-                        <td data-label="Humidity">30</td>
-                        <td data-label="MAC Id">1651</td>
-                        <td data-label="IP Address">192.161.01</td>
-                        <td data-label="Session Id">0352</td>
-                      </tr>
-                      <tr>
-                        <td scope="row" data-label="Serial no.">03</td>
-                        <td data-label="Date & Time">04/01/2016-04:30PM</td>
-                        <td data-label="Temperature">40</td>
-                        <td data-label="Humidity">30</td>
-                        <td data-label="MAC Id">1651</td>
-                        <td data-label="IP Address">192.161.01</td>
-                        <td data-label="Session Id">0352</td>
-                      </tr>
-                      <tr>
-                        <td scope="row" data-label="Serial no.">04</td>
-                        <td data-label="Date & Time">04/01/2016-04:30PM</td>
-                        <td data-label="Temperature">40</td>
-                        <td data-label="Humidity">30</td>
-                        <td data-label="MAC Id">1651</td>
-                        <td data-label="IP Address">192.161.01</td>
-                        <td data-label="Session Id">0352</td>
-                      </tr>
+                        <tr>
+                          {% for sessions in Sessions %}
+                          <tr>
+                              <td>{{alerts.session_id.pk}}</td>
+                              <td>{{alerts.session_id.serial}}</td>
+                              <td>{{alerts.timestamp}}</td>
+                              <td>{{sessions.temp_lowest_level}} - {{sessions.temp_highest_level}}</td>
+                              <td>{{sessions.humidity_lowest_level}} - {{sessions.humidity_highest_level}}</td>
+                              <!-- <td>{{sessions.temp_highest_level}}</td> -->
+                              <!-- <td>{{sessions.temp_highest_level}}</td> -->
+                          </tr>
+                          {% endfor %}
+                        </tr>
                     </tbody>
-                  </table>
-  
+                </table>
             </div>
         </div>
 
