@@ -80,7 +80,15 @@ def channelinfo(request):
     return render(request, "./Channelinfo.html",context)
 
 def uac(request):
-    return render(request, "./UserAccessControl.html")
+    users = user_extra_details.objects.all()
+    groups = group_privileges.objects.all()
+    print(users)
+    context = {
+        "users":users,
+        "groups":groups
+    }
+
+    return render(request, "./UserAccessControl.html",context)
 
 def addUser(request):
     groups_priv = group_privileges.objects.all()

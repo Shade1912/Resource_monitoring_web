@@ -308,7 +308,7 @@ body{
     min-height: 400px;
 }
 .dashboard-wrapper .dashboard-container .bttns{
-    justify-content: center;
+    justify-content: space-around;
     gap: 10px;
 }
 
@@ -337,6 +337,12 @@ body{
     gap: 50px;
     align-items: center;
     justify-content: center;
+    text-align: center;
+}
+
+.dashboard-wrapper .dashboard-container .extra-details .row1 h2,
+.dashboard-wrapper .dashboard-container .extra-details .row2 h2{
+  padding: 15px 0 0 0 ;
 }
 .dashboard-wrapper .dashboard-container .extra-details .row1,
 .dashboard-wrapper .dashboard-container .extra-details .row2{
