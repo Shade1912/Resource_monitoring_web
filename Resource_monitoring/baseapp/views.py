@@ -55,10 +55,18 @@ def addreses(request):
 def alert(request):
     alerts_query = alerts.objects.all()
     alerts_message = alerts.objects.filter(Q(temperature_in_range=False) | Q(humidity_in_range=False))
+    alert_message_count = alerts_message.count()
+    total_session_count = session_data.objects.all().count()
+    active_session_count = session_data.objects.filter(Q(session_status = 1)).count()
+    inactive_session_count = total_session_count - active_session_count
     print(alerts_message)
     context = {
         "alerts":alerts_query,
-        "alertsmessage":alerts_message
+        "alertsmessage":alerts_message,
+        "alert_message_count": alert_message_count,
+        "total_session_count": total_session_count,
+        "active_session_count": active_session_count,
+        "inactive_session_count": inactive_session_count,
     }
     return render(request,"./alerts.html",context)
 
