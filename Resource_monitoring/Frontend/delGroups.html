@@ -1,0 +1,73 @@
+{% extends './template.html' %}
+{% load static %}
+{% block style-links %}
+    <link rel="stylesheet" href="{% static 'sass/Dasboard.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+{% endblock style-links %}
+
+{% block head-tag-scripts %}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{% endblock head-tag-scripts %}
+
+{% block content %}
+<label>
+  <!-- SIDEBAR -->
+  <nav class="sidebar">
+    <h1>Logo</h1>
+    <ul>
+    <li><a href="/uac"><i class="fas fa-users-gear"></i>USER MANAGEMENT</a></li>
+    <li><a href="/monitoring"><i class="fa-solid fa-desktop"></i>MONITORING</a></li>
+    <li><a href="/alert"><i class="fas fa-circle-exclamation"></i></i>ALERTS</a></li>
+    <li><a href="/reports"><i class="fa-regular fa-file-lines"></i></i>REPORTS</a></li>
+    <!-- <li><a href="/timetable"><i class="fa-solid fa-table"></i></i> TABLE</a></li> -->
+    <li><a href="/channelinfo"><i class="fa-solid fa-timeline"></i></i>CHANNEL INFO</a></li>
+    </ul>
+  </nav>
+<!-- Log Out Button -->
+<div class="logoutbtn"><button><a href="#">Log Out</a></button></div>  
+
+<div class="container5">
+
+<table id="Delusr">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Group name
+        </th>
+        <th>
+            Action
+        </th>
+    </tr>
+    {% for group in groups  %}
+    <tr>
+        <td>
+            {{group.pk}}
+        </td>
+        <td>
+            {{group.group_name}} 
+        </td>
+        <td>
+            <a onclick="confirmDelete('/deleteGroupLink/{{group.pk}}','{{group.group_name}}')">Delete</a>
+        </td>
+    </tr>
+    
+    {% endfor %}
+    <script>
+        function confirmDelete(link,grpname){
+            let confirmation = confirm(`group ${grpname}, will get deleted, are you sure`)
+            if(confirmation == true){
+                window.location.href = link
+                alert("deleted")
+            }
+        }
+    </script>
+    
+</table>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+{% endblock scripts %}

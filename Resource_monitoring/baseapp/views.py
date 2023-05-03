@@ -218,10 +218,45 @@ def addGroupPage(request):
 
 
 def editGroup(request):
-    pass
+    groups = group_privileges.objects.all()
+    if request.method == "POST":
+        permArray = list(request.POST["permArray"])
+        group_name = request.POST['groupName']
+        group = group_privileges.objects.get(group_name = group_name)
+        print_report = permArray[0],
+        group.view_time_table = permArray[1],
+        group.view_channel_info = permArray[2],
+        group.create_user = permArray[3],
+        group.delete_user = permArray[4],
+        group.create_grp = permArray[5],
+        group.delete_grp = permArray[6],
+        group.grp_list = permArray[7],
+        group.add_session = permArray[8],
+        group.delete_session = permArray[9],
+        group.save()
+    context = {
+        "groups": groups
+    }
+    return render(request, "./editGroups.html",context)
 
 def viewGroup(request):
-    pass
+    groups = group_privileges.objects.all
+    context = {
+        "groups": groups
+    }
+    return render(request, "./delGroups.html")
+
+def delGroup(request):
+    groups = group_privileges.objects.all()
+    context = {
+        "groups": groups
+    }
+    return render(request, "./delGroups.html",context)
+
+def deleteGroupLink(request,grpId):
+    grp = group_privileges.objects.get(pk = grpId)
+    grp.delete()
+    return redirect(delGroup)
 
 
 @login_required

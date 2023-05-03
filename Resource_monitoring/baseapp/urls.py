@@ -25,6 +25,8 @@ urlpatterns = [
     path('addUser', views.addUser, name="addUser"),
     path('removeSession/<slug:sessionID>', views.removeSession, name="removeSession"), 
     path('addsess', views.addsess, name="addsess"),
-    path('testPage', views.testPage, name="testPage")
+    path('testPage', views.testPage, name="testPage"),
+    path('delGroup', views.delGroup, name="delGroup"),
+    path('deleteGroupLink/<int:grpId>', views.deleteGroupLink, name="deleteGroupLink"), 
 
 ]
