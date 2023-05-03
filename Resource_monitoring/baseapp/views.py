@@ -1,6 +1,7 @@
 from datetime import datetime, time
 from imaplib import Commands
 import random
+from Resource_monitoring.baseapp.report cases.report import report
 from django.shortcuts import render, redirect
 from baseapp.models import probe
 from baseapp.models import group_privileges,userlogs, alerts,session_data, user_extra_details
@@ -79,6 +80,7 @@ def monitoring(request):
     return render(request,"./Monitoring.html",context)
 
 def reports(request):
+    report()
     return render(request,"./Reports.html")
     
 def timetable(request):

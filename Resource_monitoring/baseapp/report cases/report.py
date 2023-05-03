@@ -7,7 +7,6 @@ from bothDates import *
 from allValues import *
 
 def report(start_date, end_date, start_time, end_time):
-
     try:
         if(start_date == -1):
             nostartdate(end_date)
