@@ -8,6 +8,7 @@ from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages #import messages
+from django.contrib.auth.hashers import make_password
 
 import sys
 import glob
@@ -98,7 +99,6 @@ def uac(request):
         "users":users,
         "groups":groups
     }
-
     return render(request, "./UserAccessControl.html",context)
 
 def addUser(request):
@@ -130,7 +130,7 @@ def createUser(firstname,lastname,email,user_name,Password,group_Name):
                 first_name = firstname,
                 last_name = lastname,
                 email = email,
-                password = Password,
+                password = make_password(Password),
             )
             add_user_query.save()
             user_id = add_user_query.pk
@@ -195,11 +195,20 @@ def viewUser(request,userId):
     return render(request, "./view_user.html",context)
 
 def editUser(request):
-    all_user = user_extra_details.objects.filter(is_deleted = 0)
-    context = {
-        "all_users": all_user
-    }
-    return render(request, "./editUser.html",context)
+    current_user = request.user
+    grp_id = user_extra_details.objects.get(user_id = current_user.id).group_name.pk
+    grp_data = group_privileges.objects.get(pk = grp_id)
+    if(grp_data.create_user == 1):
+        all_user = user_extra_details.objects.filter(is_deleted = 0)
+        context = {
+            "all_users": all_user
+        }
+        return render(request, "./editUser.html",context)
+    else:
+        context = {
+            "message" : "You don't have permission to modify user"
+        }
+        return redirect(uac)
 
 
 def manageGroup(request):
