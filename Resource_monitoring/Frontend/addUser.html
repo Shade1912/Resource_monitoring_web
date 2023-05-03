@@ -1,78 +1,97 @@
-{% extends './template.html' %}
-{% load static %}
-{% block style-links %}
-    <link rel="stylesheet" href="{% static 'sass/Dasboard.css' %}">
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="Mainpage">
+        <div class="Alertscontainer">
+            <div class="Serialinfo">
+            </div>
+            <div class="ErrorMsg">
+            </div>
+            <div class="SessionDetails"></div>
+        </div>
+    </div>
+</body>
+</html> -->
+
+{% extends 'template.html' %} 
+{% load static %}
+
+{% block style-links %}
+
 {% endblock style-links %}
 
 {% block head-tag-scripts %}
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 {% endblock head-tag-scripts %}
 
 {% block content %}
-<label>
-  <!-- SIDEBAR -->
-  <nav>
-    <label for="sidebar"></label>
-    <h1>Logo</h1>
-    <ul>
-    <li><a href="/uac"><i class="fas fa-users-gear"></i>USER MANAGEMENT</a></li>
-    <li><a href="/monitoring"><i class="fa-solid fa-desktop"></i>MONITORING</a></li>
-    <li><a href="/alert"><i class="fas fa-circle-exclamation"></i></i>ALERTS</a></li>
-    <li><a href="/reports"><i class="fa-regular fa-file-lines"></i></i>REPORTS</a></li>
-    <li><a href="/channelinfo"><i class="fa-solid fa-timeline"></i></i>CHANNEL INFO</a></li>
-    </ul>
-  </nav>
-<!-- Log Out Button -->
-<div class="logoutbtn"><button><a href="#">Log Out</a></button></div> 
+ 
+<div class="AddUsr-wrapper">
+    <div class="AddUsr-container">
 
-<div class="container2">
-    <form class="userform" method="post">
-        {% csrf_token %}
-        <div>
-            <div class="fn">
-                <label for="firstname">FIRST NAME:</label>
-                <input type="text" id="firstname" name="firstname" />
-            </div>
-            <div class="ln">
-                <label for="Lastname">LAST NAME:</label>
-                <input type="text" id="lastname" name="lastname" />
+        <div class="AddUsrbox responsive-flex">
+            <div class="Userf">
+                <form class="userform" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <div class="UserInputs">
+                            <label for="firstname">FIRST NAME:</label>
+                            <input type="text" id="firstname" name="firstname" />
+                        </div>
+                        <div class="UserInputs">
+                            <label for="Lastname">LAST NAME:</label>
+                            <input type="text" id="lastname" name="lastname" />
+                        </div>
+            
+                        <div class="UserInputs">
+                            <label for="Email">EMAIL:</label>
+                            <input type="email" id="email" name="email" />
+                        </div>
+                        
+                        <div class="UserInputs">
+                            <label for="username">USERNAME:</label>
+                            <input type="text" id="username" name="username"  />
+                        </div>
+                        <div class="UserInputs">
+                            <label for="password">PASSWORD:</label>
+                            <input type="password" id="password" name="password" />
+                        </div>
+                        
+                        <div class="UserInputs">
+                            <label for="group" >GROUP</label>
+                            <select name="group_priv_id">
+                                {% for group in group_priv %}
+                                <option value="{{group.pk}}">{{group.group_name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="Submitbtn">
+                            <button type="submit"><a>SUBMIT</a></button>
+                        </div>
+    
+    
+                        {% for message in messages %}
+                            <script>
+                                alert("{{message}}")
+                            </script>
+                        {% endfor %}
+                    </div>
+                </form>
             </div>
 
-            <div>
-                <label for="Email">EMAIL:</label>
-                <input type="email" id="email" name="email" />
-            </div>
-            
-            <div>
-                <label for="username">USERNAME:</label>
-                <input type="test" id="username" name="username"  />
-            </div>
-            <div>
-                <label for="password">PASSWORD:</label>
-                <input type="password" id="password" name="password" />
-            </div>
-            
-            <div>
-                <label for="group" >GROUP</label>
-                <select name="group_priv_id">
-                    {% for group in group_priv %}
-                    <option value="{{group.pk}}">{{group.group_name}}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="Submitbtn">
-                <button type="submit"><a>SUBMIT</a></button>
-            </div>
-            {% for message in messages %}
-                <script>
-                    alert("{{message}}")
-                </script>
-            {% endfor %}
+
         </div>
-    </form>
+    </div>
 </div>
+  
 {% endblock content %}
 
 {% block scripts %}

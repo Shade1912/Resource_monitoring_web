@@ -944,3 +944,489 @@ body{
       flex-direction: column;
   }
 }
+
+
+
+/*==================== MANAGE USERS ================*/
+
+
+
+.responsive-flex{
+  display: flex;
+}
+.Users-wrapper{
+  /* border: 1px solid; */
+}
+.Users-wrapper .Users-container{
+  padding: 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.Users-wrapper .Users-container .ManageUsers{
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  min-height: 600px;
+  width: 100%;
+}
+
+.Users-wrapper .Users-container .ManageUsers .Mangeuserbtns{
+  justify-content: center;
+  gap: 50px;
+}
+
+.Users-wrapper .Users-container .ManageUsers .Mangeuserbtns button{
+  padding: 40px 80px;
+  text-align: center;
+  background: #FFFAF8;
+  border: 2px solid #EE925B;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25), inset -4px -4px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+
+
+
+.Users-wrapper .Users-container .ManageUsers .Mangeuserbtns button:hover{
+  background-color: #EE925B;
+}
+
+.Users-wrapper .Users-container .ManageUsers .Mangeuserbtns button a{
+  color: var(--primary-text-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #3F3F40;
+}
+
+@media (max-width: 768px) {
+  .responsive-flex{
+      flex-direction: column;
+  }
+}
+
+
+/* =======================Add User============== */
+
+.AddUsr-wrapper{
+  
+  /* border: 1px solid; */
+}
+.AddUsr-wrapper .AddUsr-container{
+  padding: 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.AddUsr-wrapper .AddUsr-container .AddUsrbox{
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  
+  min-height: 600px;
+  width: 100%;
+}
+
+.AddUsr-wrapper .AddUsr-container .AddUsrbox .userform{
+  max-width: 600px;
+  max-height: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.AddUsr-wrapper .AddUsr-container .AddUsrbox .userform .UserInputs{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px
+}
+
+.AddUsr-wrapper .AddUsr-container .AddUsrbox .userform .UserInputs .label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+input,
+textarea{
+  flex: 1;
+  padding: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+input[type=test],
+textarea {
+	width: 100%;
+  border: 1px solid #000000;
+}
+  input[type=text],
+  input[type=email],
+  input[type=url],
+  input[type=password]
+  input[type=test] {
+    width: 50%;
+  }
+  input[type=text]:focus,
+  input[type=email]:focus,
+  input[type=url]:focus,
+  input[type=test]:focus
+  input[type=password]:focus,
+  textarea:focus {
+    outline: 0;
+    border-color: #4697e4;
+  }
+
+  button[type="submit"] {
+    background-color: #EE925B;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+@media screen and (max-width: 600px) {
+  .userform {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-flex{
+      flex-direction: column;
+  }
+}
+
+
+/*=================Edit================= */
+
+.EditUsr-wrapper{
+  /* border: 1px solid; */
+}
+.EditUsr-wrapper .EditUsr-container{
+  padding: 10px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.responsive-flex{
+  display: flex;
+}
+
+.EditUsr-wrapper .EditUsr-container .editusr-C .edituser-table{
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  
+  min-height: 600px;
+  width: 100%;
+}
+
+.EditUsr-wrapper .EditUsr-container .editusr-C .edituser-table table{
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  border-radius: inherit;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+
+
+.EditUsr-wrapper .EditUsr-container .editusr-C .edituser-table table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+.EditUsr-wrapper .EditUsr-container .editusr-C .edituser-table table th,
+.EditUsr-wrapper .EditUsr-container .editusr-C .edituser-table table td {
+  padding: .625em;
+  text-align: center;
+}
+
+.EditUsr-wrapper .EditUsr-container .editusr-C .edituser-table table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .EditUsr-wrapper .EditUsr-container .editusr-C .edituser-table table {
+    border: 0;
+  }
+
+  
+  .EditUsr-wrapper .EditUsr-container .editusr-C .edituser-table table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  .EditUsr-wrapper .EditUsr-container .editusr-C .edituser-table table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  .EditUsr-wrapper .EditUsr-container .editusr-C .edituser-table table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  .EditUsr-wrapper .EditUsr-container .editusr-C .edituser-table table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .EditUsr-wrapper .EditUsr-container .editusr-C .edituser-table table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-flex{
+      flex-direction: column;
+  }
+}
+
+
+/* =====Delete User========== */
+
+.DelUsr-wrapper{
+  /* border: 1px solid; */
+}
+
+.DelUsr-wrapper .DelUsr-container{
+  padding: 10px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.responsive-flex{
+  display: flex;
+}
+
+.DelUsr-wrapper .DelUsr-container .Delusr-C .deluser-table{
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  
+  min-height: 600px;
+  width: 100%;
+}
+
+.DelUsr-wrapper .DelUsr-container .Delusr-C .deluser-table table{
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  border-radius: inherit;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+
+
+.DelUsr-wrapper .DelUsr-container .Delusr-C .deluser-table table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+.DelUsr-wrapper .DelUsr-container .Delusr-C .deluser-table table th,
+.DelUsr-wrapper .DelUsr-container .Delusr-C .deluser-table table td {
+  padding: .625em;
+  text-align: center;
+}
+
+.DelUsr-wrapper .DelUsr-container .Delusr-C .deluser-table table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .DelUsr-wrapper .DelUsr-container .Delusr-C .deluser-table table {
+    border: 0;
+  }
+
+  
+  .DelUsr-wrapper .DelUsr-container .Delusr-C .deluser-table table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  .DelUsr-wrapper .DelUsr-container .Delusr-C .deluser-table table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  .DelUsr-wrapper .DelUsr-container .Delusr-C .deluser-table table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  .DelUsr-wrapper .DelUsr-container .Delusr-C .deluser-table table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .DelUsr-wrapper .DelUsr-container .Delusr-C .deluser-table table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-flex{
+      flex-direction: column;
+  }
+}
+
+
+/* ===== Manage Groups====== */
+
+
+.responsive-flex{
+  display: flex;
+}
+.Group-wrapper{
+  /* border: 1px solid; */
+}
+.Group-wrapper .Group-container{
+  padding: 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.Group-wrapper .Group-container .ManageGroup{
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  min-height: 600px;
+  width: 100%;
+}
+
+.Group-wrapper .Group-container .ManageGroup .MangeGroupbtns{
+  justify-content: center;
+  gap: 50px;
+}
+
+.Group-wrapper .Group-container .ManageGroup .MangeGroupbtns button{
+  padding: 40px 80px;
+  text-align: center;
+  background: #FFFAF8;
+  border: 2px solid #EE925B;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25), inset -4px -4px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+
+
+
+.Group-wrapper .Group-container .ManageGroup .MangeGroupbtns button:hover{
+  background-color: #EE925B;
+}
+
+.Group-wrapper .Group-container .ManageGroup .MangeGroupbtns button a{
+  color: var(--primary-text-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+  color: #3F3F40;
+}
+
+@media (max-width: 768px) {
+  .responsive-flex{
+      flex-direction: column;
+  }
+}
+
+
+
+/* ========Add Groups======== */
+
+.addGroup-wrapper{
+  /* border: 1px solid; */
+}
+
+.addGroup-wrapper .addGroup-container{
+  padding: 10px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.responsive-flex{
+  display: flex;
+}
+
+.addGroup-wrapper .addGroup-container .addGroupform {
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  
+  min-height: 600px;
+  width: 100%;
+}
+
+.addGroup-wrapper .addGroup-container .addGroupform #addGroupForm{
+  padding-top: 100px;
+}
