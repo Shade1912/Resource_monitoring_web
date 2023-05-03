@@ -72,7 +72,19 @@
 
         <div class="Err-details responsive-flex">
             <div class="ErrorMsg">
-                
+               
+            
+                {% for message in alertsmessage %}
+                {% if message.temperature_in_range == False %} 
+                  Session ID {{message.session_id.pk}} and Serial ID {{message.session_id.serial}} found that Temperature is not in range
+                {% elif message.humidity_in_range == False%} 
+                Session ID {{message.session_id.pk}} and Serial ID {{message.session_id.serial}} found that Humidity is not in range
+                {% else %}
+                Session ID {{message.session_id.pk}} and Serial ID {{message.session_id.serial}} found that Temperature and Humidity are not in range
+                {% endif %}
+
+                {% endfor %}
+          
             </div>
             <!-- <div class="SessDetails">
             

@@ -54,8 +54,11 @@ def addreses(request):
 
 def alert(request):
     alerts_query = alerts.objects.all()
+    alerts_message = alerts.objects.filter(Q(temperature_in_range=False) | Q(humidity_in_range=False))
+    print(alerts_message)
     context = {
-        "alerts":alerts_query
+        "alerts":alerts_query,
+        "alertsmessage":alerts_message
     }
     return render(request,"./alerts.html",context)
 
